@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+            <TextView
+                android:textSize="20sp"
+                android:textColor="#7c7373"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Full name"/>
+            <EditText
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="20sp"
+                android:textColor="#7c7373"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your are? T = Tutor / S = Student"/>
+            <Switch
+                android:showText="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="S"
+                android:textOn="T"/>
+
+            <TextView
+                android:textSize="20sp"
+                android:textColor="#7c7373"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email or Phone number"/>
+            <EditText
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="20sp"
+                android:textColor="#7c7373"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"/>
+            <EditText
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="20sp"
+                android:textColor="#7c7373"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password"/>
+            <EditText
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#6892ed"
+                android:textColor="#fff"
+                android:text="Signup"/>
+            <Button
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#6892ed"
+                android:textColor="#fff"
+                android:text="Signup with Facebook"/>
+
+            <TextView
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Already have an account?"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/loginnow"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login now!"
+                android:textColor="#4b63e9"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
