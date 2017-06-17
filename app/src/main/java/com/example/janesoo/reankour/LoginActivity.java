@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, ListTutorActivity.class);
+                Intent intent = new Intent(LoginActivity.this, AllTabViewActivity.class);
                 startActivity(intent);
             }
         });
