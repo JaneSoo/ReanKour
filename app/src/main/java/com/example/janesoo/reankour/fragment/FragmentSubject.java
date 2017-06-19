@@ -18,7 +18,7 @@ public class FragmentSubject extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View myview = inflater.inflate(R.layout.tutors_fragment_layout,container,false);
+        View myview = inflater.inflate(R.layout.all_fragment_layout,container,false);
         return myview;
     }
 }

@@ -21,7 +21,7 @@
         <activity android:name=".ListTutorActivity"></activity>
         <activity android:name=".DetatilActivity"></activity>
         <activity android:name=".SignUpActivity"></activity>
-        <activity android:name=".AllTabViewActivity"></activity>
+        <activity android:name=".AllBottomNavigationViewActivity"></activity>
     </application>
 
 </manifest>

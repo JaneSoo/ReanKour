@@ -2,6 +2,7 @@ package com.example.janesoo.reankour;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,67 +11,71 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int SPLASH_DISPLAY_LENGTH = 1000;
-    int sleep = 10;
-    Handler handler = new Handler();
-
-
+    TextView count;
+    ProgressBar progressBar;
+    CountNumberHandler handler = new CountNumberHandler();
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
-
-
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        count = (TextView) findViewById(R.id.loading);
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        CountNumberThread thread = new CountNumberThread(100);
+        thread.start();
+    }
 
-//        progressBar = (ProgressBar) findViewById(R.id.process);
-//        loding = (TextView) findViewById(R.id.loading);
-//
 
-        new Thread(new Runnable() {
-            int running = 0;
-            @Override
-            public void run() {
+    //create multi process
+    class CountNumberThread extends Thread{
 
-                while(running < 100)
-                {
-                    running += 1;
-                    try {
-                        Thread.sleep(sleep);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
+        int num;
 
-                        }
-                    });
+        public CountNumberThread(int num) {
+            this.num = num;
+        }
+
+        @Override
+        public void run() {
+            super.run();
+            for(int i=0;i<=num;i++){
+                //create bundle to store data
+                Bundle bundle = new Bundle();
+                bundle.putInt("number", i);
+                Message message = new Message();
+                message.setData(bundle);
+
+                handler.sendMessage(message);
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
-        }).start();
+        }
+    }
 
+    //showing on GUI
+    class CountNumberHandler extends Handler{
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
 
-        /* New Handler to start the Menu-Activity
-         * and close this Splash-Screen after some seconds.*/
-        new Handler().postDelayed(new Runnable(){
-            @Override
-            public void run() {
-                /* Create an Intent that will start the Menu-Activity. */
-                    Intent intent = new Intent(getBaseContext(), LoginActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(intent);
+            Bundle b = msg.getData();
+            int data = b.getInt("number");
+            progressBar.setProgress(data);
+            count.setText("Loading "+data+"%");
 
+            if(data==100){
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
             }
-        }, SPLASH_DISPLAY_LENGTH);
+
+        }
     }
 }

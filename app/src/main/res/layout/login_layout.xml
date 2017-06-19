@@ -25,8 +25,9 @@
                 android:textColor="#7c7373"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"/>
+                android:text="Email"/>
             <EditText
+                android:id="@+id/loginemail"
                 android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -38,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:text="Password"/>
             <EditText
+                android:id="@+id/loginpass"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

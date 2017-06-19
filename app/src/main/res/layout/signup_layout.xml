@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_margin="20dp">
+            android:layout_margin="10dp">
             <TextView
                 android:textSize="20sp"
                 android:textColor="#7c7373"
@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:text="Full name"/>
             <EditText
+                android:id="@+id/signupFullname"
                 android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -35,21 +36,28 @@
                 android:textColor="#7c7373"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your are? T = Tutor / S = Student"/>
-            <Switch
-                android:showText="true"
+                android:text="Account Type"/>
+            <!--<Switch-->
+                <!--android:showText="true"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textOff="S"-->
+                <!--android:textOn="T"/>-->
+            <android.support.v7.widget.SwitchCompat
                 android:layout_width="wrap_content"
+                android:textOff="Student"
+                android:textOn="Tutors"
                 android:layout_height="wrap_content"
-                android:textOff="S"
-                android:textOn="T"/>
+                android:checked="true"/>
 
             <TextView
                 android:textSize="20sp"
                 android:textColor="#7c7373"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email or Phone number"/>
+                android:text="Email Address"/>
             <EditText
+                android:id="@+id/singupEmail"
                 android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -60,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:text="Password"/>
             <EditText
+                android:id="@+id/singupPassword"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -70,10 +79,12 @@
                 android:layout_height="wrap_content"
                 android:text="Confirm Password"/>
             <EditText
+                android:id="@+id/confirmPassword"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
+                android:id="@+id/signupBtn"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
