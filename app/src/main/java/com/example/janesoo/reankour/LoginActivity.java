@@ -29,8 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     TextView signup;
     EditText email, password;
     ProgressDialog progressDialog;
-    DatabaseReference mdatabase;
     private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
 
     @Override
@@ -39,8 +39,18 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.login_layout);
 
         mAuth = FirebaseAuth.getInstance();
-        mdatabase = FirebaseDatabase.getInstance().getReference().child("Users");
-        mdatabase.keepSynced(true);
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser() != null)
+                {
+                    Intent intent = new Intent(getBaseContext(), AllBottomNavigationViewActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
         progressDialog= new ProgressDialog(this);
 
         login = (Button) findViewById(R.id.loginbtn);
@@ -61,10 +71,8 @@ public class LoginActivity extends AppCompatActivity {
                     password.setError("Required");
                     test = false;
                 }
-
-                if(test==true){
+                if(test){
                     checkLogin();
-
                 }
 
             }
@@ -72,10 +80,16 @@ public class LoginActivity extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,SignUpActivity.class);
+                Intent intent = new Intent(getBaseContext(),SignUpActivity.class);
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
     }
 
     private void checkLogin(){
@@ -88,13 +102,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     progressDialog.dismiss();
-                    Intent intent = new Intent(LoginActivity.this, AllBottomNavigationViewActivity.class);
+                    Intent intent = new Intent(getBaseContext(), AllBottomNavigationViewActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
                 else{
                     progressDialog.dismiss();
-                    Toast.makeText(LoginActivity.this,"Error login!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(),"Error login!", Toast.LENGTH_LONG).show();
                 }
             }
         });

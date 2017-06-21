@@ -31,7 +31,6 @@ import java.util.ArrayList;
  */
 
 public class FragmentTutor extends Fragment {
-    Context context;
     ListView listView;
     TutorAdapter adapter;
     Button btndetail;
@@ -41,12 +40,12 @@ public class FragmentTutor extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View myview = inflater.inflate(R.layout.all_fragment_layout,container,false);
+        View myview = inflater.inflate(R.layout.all_fragment_layout, container, false);
         listView = (ListView) myview.findViewById(R.id.tutor_listview);
         btndetail = (Button) myview.findViewById(R.id.btndetail);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-        databaseReference.keepSynced(true);
+//        databaseReference.keepSynced(true);
 
         final ArrayList<User> arrayList = new ArrayList<>();
 
@@ -54,13 +53,15 @@ public class FragmentTutor extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 arrayList.clear();
-                for(DataSnapshot tutorSnapshot: dataSnapshot.getChildren()){
+                for (DataSnapshot tutorSnapshot : dataSnapshot.getChildren()) {
                     User user = tutorSnapshot.getValue(User.class);
-                    arrayList.add(user);
+                    if (user.getAccountType().equals("Tutor"))
+                    {
+                        arrayList.add(user);
+                    }
                     adapter = new TutorAdapter(getContext(),R.layout.all_fragment_layout,arrayList);
                     listView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
-
                 }
             }
 
@@ -69,6 +70,7 @@ public class FragmentTutor extends Fragment {
 
             }
         });
+
         return myview;
     }
 }
