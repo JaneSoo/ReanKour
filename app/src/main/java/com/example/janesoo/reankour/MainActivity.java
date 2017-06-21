@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
             if(data==100){
                 Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
 

@@ -37,18 +37,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Account Type"/>
-            <!--<Switch-->
-                <!--android:showText="true"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textOff="S"-->
-                <!--android:textOn="T"/>-->
-            <android.support.v7.widget.SwitchCompat
-                android:layout_width="wrap_content"
-                android:textOff="Student"
-                android:textOn="Tutors"
-                android:layout_height="wrap_content"
-                android:checked="true"/>
+            <Spinner
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/signupAccountType"
+                android:layout_width="match_parent"
+                android:entries="@array/account_type"
+                android:layout_height="wrap_content">
+            </Spinner>
 
             <TextView
                 android:textSize="20sp"
