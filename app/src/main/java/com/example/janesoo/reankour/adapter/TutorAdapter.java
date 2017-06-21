@@ -65,18 +65,19 @@ public class TutorAdapter extends BaseAdapter {
 
         User model = listofTutor.get(position);
 
-
-        imageView.setImageResource(model.getPicture());
-        tutorName.setText(model.getfullname());
-        tutorSkill.setText(model.getSkill());
-        tutorExperience.setText(model.getExperience());
-        tutorLocation.setText(model.getAddress());
+        if(model.getUsertype().equals("Tutor")){
+            imageView.setImageResource(model.getPicture());
+            tutorName.setText(model.getfullname());
+            tutorSkill.setText(model.getSkill());
+            tutorExperience.setText(model.getExperience());
+            tutorLocation.setText(model.getAddress());
+        }
 
         btnDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,DetatilActivity.class);
-                detatilActivity.startActivity(intent);
+                context.startActivity(intent);
             }
         });
 

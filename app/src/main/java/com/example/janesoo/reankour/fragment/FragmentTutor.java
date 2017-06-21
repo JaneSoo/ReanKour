@@ -46,6 +46,7 @@ public class FragmentTutor extends Fragment {
         btndetail = (Button) myview.findViewById(R.id.btndetail);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        databaseReference.keepSynced(true);
 
         final ArrayList<User> arrayList = new ArrayList<>();
 
