@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    private String name, sex, email, password, address, skill, phone, education, position, experience;
+    private String fullname, sex, email, password, address, skill, phone, education, position, experience;
     boolean usertype;
     private int picture;
 
@@ -17,14 +17,14 @@ public class User implements Serializable {
     }
 
     public User(String name, String email, String password, boolean usertype) {
-        this.name = name;
+        this.fullname = name;
         this.email = email;
         this.password = password;
         this.usertype = usertype;
     }
 
     public User(String name, String address, String skill, String experience, int picture) {
-        this.name = name;
+        this.fullname = name;
         this.address = address;
         this.skill = skill;
         this.experience = experience;
@@ -50,12 +50,12 @@ public class User implements Serializable {
         this.picture = picture;
     }
 
-    public String getName() {
-        return name;
+    public String getfullname() {
+        return fullname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setfullname(String name) {
+        this.fullname = name;
     }
 
     public String getSex() {

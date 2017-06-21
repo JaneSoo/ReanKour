@@ -9,9 +9,11 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.janesoo.reankour.DetatilActivity;
 import com.example.janesoo.reankour.R;
+import com.example.janesoo.reankour.fragment.FragmentTutor;
 import com.example.janesoo.reankour.model.User;
 
 import java.util.ArrayList;
@@ -25,6 +27,7 @@ public class TutorAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<User> listofTutor;
     private int layout;
+    DetatilActivity detatilActivity;
 
     public TutorAdapter(Context context, int layout, ArrayList<User> listofTutor){
         this.context = context;
@@ -49,7 +52,7 @@ public class TutorAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+        final LayoutInflater inflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         final View view = inflater.inflate(R.layout.tutors_item_layout,null);
 
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
@@ -64,11 +67,20 @@ public class TutorAdapter extends BaseAdapter {
 
 
         imageView.setImageResource(model.getPicture());
-        tutorName.setText(model.getName());
+        tutorName.setText(model.getfullname());
         tutorSkill.setText(model.getSkill());
         tutorExperience.setText(model.getExperience());
         tutorLocation.setText(model.getAddress());
 
+        btnDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,DetatilActivity.class);
+                detatilActivity.startActivity(intent);
+            }
+        });
+
         return view;
     }
+
 }

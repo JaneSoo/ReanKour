@@ -58,14 +58,14 @@ public class AllBottomNavigationViewActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.myprofile){
-
+            Intent intent = new Intent(getBaseContext(),DetatilActivity.class);
+            startActivity(intent);
         }
-
         if(item.getItemId() == R.id.setting){
-
+            Intent intent = new Intent(getBaseContext(),DetatilActivity.class);
+            startActivity(intent);
 
         }
-
         if(item.getItemId() == R.id.logout){
             logout();
         }

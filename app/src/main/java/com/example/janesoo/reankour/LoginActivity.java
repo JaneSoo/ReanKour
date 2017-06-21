@@ -1,5 +1,6 @@
 package com.example.janesoo.reankour;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     TextView signup;
     EditText email, password;
+    ProgressDialog progressDialog;
 
     private FirebaseAuth mAuth;
 
@@ -35,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.login_layout);
 
         mAuth = FirebaseAuth.getInstance();
+        progressDialog= new ProgressDialog(this);
 
         login = (Button) findViewById(R.id.loginbtn);
         signup = (TextView) findViewById(R.id.textSignup);
@@ -57,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(test==true){
                     checkLogin();
+
                 }
 
             }
@@ -73,16 +77,19 @@ public class LoginActivity extends AppCompatActivity {
     private void checkLogin(){
         String memail = email.getText().toString().trim();
         String mpassword = password.getText().toString().trim();
-
+        progressDialog.setMessage("Waiting...");
+        progressDialog.show();
         mAuth.signInWithEmailAndPassword(memail,mpassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    progressDialog.dismiss();
                     Intent intent = new Intent(LoginActivity.this, AllBottomNavigationViewActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
                 else{
+                    progressDialog.dismiss();
                     Toast.makeText(LoginActivity.this,"Error login!", Toast.LENGTH_LONG).show();
                 }
             }
