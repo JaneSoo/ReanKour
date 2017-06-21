@@ -18,13 +18,14 @@ import com.google.android.youtube.player.YouTubePlayer.PlaybackEventListener;
 import com.google.android.youtube.player.YouTubePlayer.PlayerStateChangeListener;
 import com.google.android.youtube.player.YouTubePlayer.Provider;
 
-public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener{
-    public static final String API_KEY = "AIzaSyBH0e3CvhSejVEUAAkIzd4Dq9hg8CNsjuk";
+public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+
+    public static final String API_KEY = "AIzaSyBVqCY2fJzXZfcFqArt7MxAg3Rz7TpNhPU";
     public static final String VIDEO_ID = "srH-2pQdKhg";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.content_video);
 /** Initializing YouTube Player View **/
         YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube);
         youTubePlayerView.initialize(API_KEY, this);
