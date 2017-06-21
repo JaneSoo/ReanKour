@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="#eaf1f7"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp">
+
+                    <ImageView
+                        android:layout_gravity="end"
+                        android:src="@drawable/edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/profile_image"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:src="@drawable/taa"
+                        app:civ_border_width="3dp"
+                        app:civ_border_color="#fff"/>
+                    <TextView
+                        android:textColor="#286ce2"
+                        android:textSize="15dp"
+                        android:text="Change Photo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/man"/>
+                <TextView
+                    android:textColor="#0d0c0c"
+                    android:paddingLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20dp"
+                    android:text="kor koemsreang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"/>
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/compass"/>
+                <TextView
+                    android:textColor="#0d0c0c"
+                    android:paddingLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20dp"
+                    android:text="Website"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"/>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/couple"/>
+                <TextView
+                    android:textColor="#0d0c0c"
+                    android:paddingLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20dp"
+                    android:text="Single"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"/>
+
+            <TextView
+                android:paddingTop="10dp"
+                android:textColor="#0e0e0e"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="PRIVATE INFORMATION"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/mail"/>
+                <TextView
+                    android:textColor="#0d0c0c"
+                    android:paddingLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20dp"
+                    android:text="korkoemsreang@gmail.com"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"/>
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/smartphone"/>
+                <TextView
+                    android:textColor="#0d0c0c"
+                    android:paddingLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20dp"
+                    android:text="+85586736302"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"/>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/homosexual"/>
+                <TextView
+                    android:textColor="#0d0c0c"
+                    android:paddingLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20dp"
+                    android:text="Female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
