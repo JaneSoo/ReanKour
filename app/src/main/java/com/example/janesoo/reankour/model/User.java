@@ -9,14 +9,14 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     private String fullname, sex, email, password, address, skill, phone, education, position, experience;
-    boolean usertype;
+    String usertype;
     private int picture;
 
     public User(){
 
     }
 
-    public User(String name, String email, String password, boolean usertype) {
+    public User(String name, String email, String password, String usertype) {
         this.fullname = name;
         this.email = email;
         this.password = password;
@@ -130,11 +130,11 @@ public class User implements Serializable {
         this.experience = experience;
     }
 
-    public boolean isUsertype() {
+    public String getUsertype() {
         return usertype;
     }
 
-    public void setUsertype(boolean usertype) {
+    public void setUsertype(String usertype) {
         this.usertype = usertype;
     }
 

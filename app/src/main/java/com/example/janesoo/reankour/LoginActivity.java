@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Created by JaneSoo on 14-Jun-17.
@@ -27,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView signup;
     EditText email, password;
     ProgressDialog progressDialog;
-
+    DatabaseReference mdatabase;
     private FirebaseAuth mAuth;
 
 
@@ -37,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.login_layout);
 
         mAuth = FirebaseAuth.getInstance();
+        mdatabase = FirebaseDatabase.getInstance().getReference().child("Users");
+        mdatabase.keepSynced(true);
         progressDialog= new ProgressDialog(this);
 
         login = (Button) findViewById(R.id.loginbtn);

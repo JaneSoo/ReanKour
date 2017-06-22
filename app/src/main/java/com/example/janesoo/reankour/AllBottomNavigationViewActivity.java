@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import com.example.janesoo.reankour.fragment.BottomNavigationFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Created by JaneSoo on 17-Jun-17.
@@ -29,6 +30,8 @@ public class AllBottomNavigationViewActivity extends AppCompatActivity {
         setContentView(R.layout.sample_layout);
 
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
+        mDatabase.keepSynced(true);
         mAuthListener = new FirebaseAuth.AuthStateListener(){
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
