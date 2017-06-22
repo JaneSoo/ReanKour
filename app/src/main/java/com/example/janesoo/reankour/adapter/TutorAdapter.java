@@ -65,13 +65,10 @@ public class TutorAdapter extends BaseAdapter {
 
         User model = listofTutor.get(position);
 
-        if(model.getUsertype().equals("Tutor")){
-            imageView.setImageResource(model.getPicture());
-            tutorName.setText(model.getfullname());
+            tutorName.setText(model.getFullname());
             tutorSkill.setText(model.getSkill());
             tutorExperience.setText(model.getExperience());
             tutorLocation.setText(model.getAddress());
-        }
 
         btnDetail.setOnClickListener(new View.OnClickListener() {
             @Override

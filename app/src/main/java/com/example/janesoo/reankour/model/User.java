@@ -8,78 +8,40 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    private String fullname, sex, email, password, address, skill, phone, education, position, experience;
-    String usertype;
-    private int picture;
+    private String accountType;
+    private String address;
+    private String dob;
+    private String education;
+    private String email;
+    private String experience;
+    private String fullname;
+    private String phone;
+    private String sex;
+    private String skill;
 
     public User(){
 
     }
 
-    public User(String name, String email, String password, String usertype) {
-        this.fullname = name;
-        this.email = email;
-        this.password = password;
-        this.usertype = usertype;
-    }
-
-    public User(String name, String address, String skill, String experience, int picture) {
-        this.fullname = name;
+    public User(String accountType, String address, String dob, String education, String email, String experience, String fullname, String phone, String sex, String skill) {
+        this.accountType = accountType;
         this.address = address;
-        this.skill = skill;
-        this.experience = experience;
-        this.picture = picture;
-    }
-
-    public User(String sex, String address, String skill, String phone, String education, String position, String experience, int picture) {
-        this.sex = sex;
-        this.address = address;
-        this.skill = skill;
-        this.phone = phone;
+        this.dob = dob;
         this.education = education;
-        this.position = position;
-        this.experience = experience;
-        this.picture = picture;
-    }
-
-    public int getPicture() {
-        return picture;
-    }
-
-    public void setPicture(int picture) {
-        this.picture = picture;
-    }
-
-    public String getfullname() {
-        return fullname;
-    }
-
-    public void setfullname(String name) {
-        this.fullname = name;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
+        this.experience = experience;
+        this.fullname = fullname;
+        this.phone = phone;
+        this.sex = sex;
+        this.skill = skill;
     }
 
-    public String getPassword() {
-        return password;
+    public String getAccountType() {
+        return accountType;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
 
     public String getAddress() {
@@ -90,20 +52,12 @@ public class User implements Serializable {
         this.address = address;
     }
 
-    public String getSkill() {
-        return skill;
+    public String getDob() {
+        return dob;
     }
 
-    public void setSkill(String skill) {
-        this.skill = skill;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     public String getEducation() {
@@ -114,12 +68,12 @@ public class User implements Serializable {
         this.education = education;
     }
 
-    public String getPosition() {
-        return position;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getExperience() {
@@ -130,12 +84,35 @@ public class User implements Serializable {
         this.experience = experience;
     }
 
-    public String getUsertype() {
-        return usertype;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setUsertype(String usertype) {
-        this.usertype = usertype;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getSkill() {
+        return skill;
+    }
+
+    public void setSkill(String skill) {
+        this.skill = skill;
+    }
 }

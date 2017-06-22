@@ -20,7 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AllBottomNavigationViewActivity extends AppCompatActivity {
 
-    private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -30,20 +29,17 @@ public class AllBottomNavigationViewActivity extends AppCompatActivity {
         setContentView(R.layout.sample_layout);
 
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
-        mDatabase.keepSynced(true);
         mAuthListener = new FirebaseAuth.AuthStateListener(){
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser() == null){
-                    Intent intent = new Intent(AllBottomNavigationViewActivity.this,LoginActivity.class);
+                    Intent intent = new Intent(getBaseContext(),LoginActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
             }
         };
-
-        getSupportFragmentManager().beginTransaction().add(R.id.main,new BottomNavigationFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main,new BottomNavigationFragment()).commit();
     }
 
     @Override
@@ -70,11 +66,8 @@ public class AllBottomNavigationViewActivity extends AppCompatActivity {
 
         }
         if(item.getItemId() == R.id.logout){
-            logout();
+            mAuth.signOut();
         }
         return super.onOptionsItemSelected(item);
-    }
-    private void logout(){
-        mAuth.signOut();
     }
 }
