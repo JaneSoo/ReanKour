@@ -4,6 +4,7 @@ package com.example.janesoo.reankour;
  * Created by Sor Phorn on 6/20/2017.
  */
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -81,4 +82,17 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         public void onVideoStarted() {
         }
     };
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT)
+        {
+            Toast.makeText(getApplicationContext(),"Portrait",Toast.LENGTH_SHORT).show();
+        }
+        else if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            Toast.makeText(getApplicationContext(),"Landscape",Toast.LENGTH_SHORT).show();
+        }
+    }
 }
