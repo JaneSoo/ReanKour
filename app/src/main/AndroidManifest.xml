@@ -31,6 +31,7 @@
         <activity android:name=".DetatilActivity"></activity>
         <activity android:name=".SignUpActivity"></activity>
         <activity android:name=".AllBottomNavigationViewActivity"></activity>
+
     </application>
 
 </manifest>
