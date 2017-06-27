@@ -1,5 +1,4 @@
 package com.example.janesoo.reankour;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -57,12 +56,12 @@ public class AllBottomNavigationViewActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.myprofile){
-            Intent intent = new Intent(getBaseContext(),DetatilActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(getBaseContext(),SignUpActivity.class);
+//            startActivity(intent);
         }
         if(item.getItemId() == R.id.setting){
-            Intent intent = new Intent(getBaseContext(),DetatilActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(getBaseContext(),DetatilActivity.class);
+//            startActivity(intent);
 
         }
         if(item.getItemId() == R.id.logout){

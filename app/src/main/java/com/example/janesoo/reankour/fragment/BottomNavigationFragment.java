@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,14 +54,18 @@ public class BottomNavigationFragment extends Fragment{
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                ActionBar actionBar = activity.getSupportActionBar();
                 if(item.getItemId() == R.id.tutor){
                     pager.setCurrentItem(0);
+                    actionBar.setTitle("Tutor");
                 }
                 else if(item.getItemId()==R.id.subject){
                     pager.setCurrentItem(1);
+                    actionBar.setTitle("Subject");
                 }
                 else {
                     pager.setCurrentItem(2);
+                    actionBar.setTitle("Video");
                 }
                 return false;
             }
@@ -82,6 +87,17 @@ public class BottomNavigationFragment extends Fragment{
                 }else{
                     bottomNavigationView.getMenu().getItem(0).setChecked(false);
                 }
+
+                if(position== 0){
+                    activity.setTitle("Tutor");
+                }
+                else if(position == 1){
+                    activity.setTitle("Subject");
+                }
+                else {
+                    activity.setTitle("Video");
+                }
+
                 bottomNavigationView.getMenu().getItem(position).setChecked(true);
                 prevMenuItem = bottomNavigationView.getMenu().getItem(position);
             }
