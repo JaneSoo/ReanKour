@@ -11,6 +11,7 @@ public class User implements Serializable {
     private String accountType;
     private String address;
     private String dob;
+    private String position;
     private String education;
     private String email;
     private String experience;
@@ -23,7 +24,9 @@ public class User implements Serializable {
 
     }
 
-    public User(String accountType, String address, String dob, String education, String email, String experience, String fullname, String phone, String sex, String skill) {
+
+    public User(String position, String accountType, String address, String dob, String education, String email, String experience, String fullname, String phone, String sex, String skill) {
+        this.position=position;
         this.accountType = accountType;
         this.address = address;
         this.dob = dob;
@@ -34,6 +37,14 @@ public class User implements Serializable {
         this.phone = phone;
         this.sex = sex;
         this.skill = skill;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public String getAccountType() {
