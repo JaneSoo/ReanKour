@@ -22,7 +22,7 @@ import com.google.android.youtube.player.YouTubePlayer.Provider;
 public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     public static final String API_KEY = "AIzaSyBVqCY2fJzXZfcFqArt7MxAg3Rz7TpNhPU";
-    public static final String VIDEO_ID = "srH-2pQdKhg";
+    public static final String VIDEO_ID = "Sc4gh5gP1AE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

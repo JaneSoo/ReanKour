@@ -1,6 +1,7 @@
 package com.example.janesoo.reankour.adapter;
 
 import android.content.Context;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.janesoo.reankour.R;
+import com.example.janesoo.reankour.SubjectActivity;
 import com.example.janesoo.reankour.model.SubjectModel;
+import com.example.janesoo.reankour.model.User;
 
 import java.util.ArrayList;
 
@@ -18,15 +21,25 @@ import java.util.ArrayList;
  */
 
 public class SubjectAdapter extends BaseAdapter {
-    private ArrayList<SubjectModel> arrayList;
+
+    SubjectActivity subjectActivity;
     private int layout;
     private Context context;
+    private ArrayList<SubjectModel> arrayList=new ArrayList<>();
 
-    public SubjectAdapter(ArrayList<SubjectModel> arrayList, int layout, Context context) {
-        this.arrayList = arrayList;
-        this.layout = layout;
+    /*public SubjectAdapter(Context context, int layout, ArrayList<SubjectModel> listSubject) {
         this.context = context;
+        this.layout =layout;
+        this.listSubject =listSubject;
+
+    }*/
+
+    public SubjectAdapter(ArrayList<SubjectModel> newSubject, Context context) {
+        this.arrayList=newSubject;
+        this.context=context;
+
     }
+
 
     @Override
     public int getCount() {
@@ -49,12 +62,16 @@ public class SubjectAdapter extends BaseAdapter {
     {
         LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View myView=inflater.inflate(R.layout.subject_layout,null);
+
+
         ImageView imageView=(ImageView)myView.findViewById(R.id.image_subject);
         TextView textTitle=(TextView)myView.findViewById(R.id.name_subject);
 
-        imageView.setImageResource(arrayList.get(position).getImage());
-        textTitle.setText(arrayList.get(position).getName());
+        SubjectModel model = arrayList.get(position);
 
-       return myView;
+        imageView.setImageResource(model.getImage());
+        textTitle.setText(model.getName());
+
+        return myView;
     }
 }
