@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<<<<<<< Updated upstream
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,6 +38,8 @@
 
     </LinearLayout>
 
+=======
+>>>>>>> Stashed changes
     <ListView
         android:divider="@null"
         android:dividerHeight="0dp"

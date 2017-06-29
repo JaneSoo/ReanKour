@@ -1,31 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/botton_navigation"
-        android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorPrimary"
-        app:menu="@menu/bottom_navigation"
-        app:itemIconTint="@drawable/color_selector"
-        app:itemTextColor="@drawable/color_selector">
-
-    </android.support.design.widget.BottomNavigationView>
-
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_above="@+id/botton_navigation"
-        android:layout_alignParentTop="true"
         android:background="#fff"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginBottom="?android:attr/actionBarSize"
         android:layout_height="wrap_content">
 
     </android.support.v4.view.ViewPager>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:orientation="horizontal"
+        android:gravity="bottom">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:hint="Keyword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:background="#2ebbe6"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="10dp"
+                android:scaleType="center"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_search_black_24dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+        <android.support.design.widget.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:id="@+id/botton_navigation"
+            app:itemBackground="@color/colorPrimary"
+            app:menu="@menu/bottom_navigation"
+            app:itemIconTint="@drawable/color_selector"
+            app:itemTextColor="@drawable/color_selector"
+            android:layout_gravity="bottom">
+
+        </android.support.design.widget.BottomNavigationView>
+
+
+</FrameLayout>
