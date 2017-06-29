@@ -36,6 +36,8 @@
         <activity android:name=".DetatilActivity"></activity>
         <activity android:name=".SignUpActivity"></activity>
         <activity android:name=".AllBottomNavigationViewActivity"></activity>
+        <activity android:name=".StudentProfileActivity"></activity>
+        <activity android:name=".TutorProfileActivity"></activity>
 
     </application>
 

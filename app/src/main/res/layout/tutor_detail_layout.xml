@@ -196,12 +196,13 @@
         <Button
             android:id="@+id/detailBtnMessage"
             android:layout_gravity="end"
-            android:background="#86ddea"
+            android:background="#2abdda"
             android:layout_marginRight="20dp"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:textColor="#fff"
-            android:text="Leave Message"/>
+            android:text="Leave Message"
+            android:layout_marginBottom="20dp"/>
     </LinearLayout>
 
 </ScrollView>
