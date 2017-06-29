@@ -5,4 +5,8 @@
     <color name="colorAccent">#e6bc4b</color>
     <color name="colorBlack">#000</color>
     <color name="colorWhite">#fff</color>
+    <color name="white">#fff</color>
+    <color name="background">#dae2e2e2</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#727272</color>
 </resources>

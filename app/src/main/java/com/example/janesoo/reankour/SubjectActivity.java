@@ -15,24 +15,19 @@ import java.util.ArrayList;
  */
 
 public class SubjectActivity extends AppCompatActivity {
-    private ArrayList<SubjectModel> arrayList=new ArrayList<>();
-    GridView myGrid;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.subject_item_layout);
 
 
-        arrayList.add(new SubjectModel("khmer",R.drawable.calculator));
-        arrayList.add(new SubjectModel("english",R.drawable.calculator));
-        arrayList.add(new SubjectModel("canada",R.drawable.calculator));
 
 
 
 
-        myGrid=(GridView)findViewById(R.id.grid_home);
-        SubjectAdapter adapter=new SubjectAdapter(arrayList,R.layout.subject_layout,SubjectActivity.this);
-        myGrid.setAdapter(adapter);
+
 
 
 
