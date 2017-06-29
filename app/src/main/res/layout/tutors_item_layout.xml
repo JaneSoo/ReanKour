@@ -96,22 +96,24 @@
                         <Button
                             android:id="@+id/btnCall"
                             android:layout_gravity="bottom"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="40dp"
                             android:padding="5dp"
                             android:text="Contact"
-                            android:background="#469cca"
+                            android:background="#2abdda"
                             android:textColor="#fff"/>
 
                         <Button
                             android:layout_gravity="bottom"
                             android:id="@+id/btndetail"
                             android:layout_marginLeft="10dp"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="40dp"
                             android:padding="5dp"
                             android:text="Detail"
-                            android:background="#469cca"
+                            android:background="#2abdda"
                             android:textColor="#fff"/>
 
                     </LinearLayout>
