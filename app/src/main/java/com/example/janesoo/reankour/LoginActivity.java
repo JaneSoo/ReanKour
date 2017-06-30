@@ -26,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class LoginActivity extends AppCompatActivity {
 
     Button login;
-    TextView signup;
+    TextView signup, forgot;
     EditText email, password;
     ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
@@ -57,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         signup = (TextView) findViewById(R.id.textSignup);
         email = (EditText) findViewById(R.id.loginemail);
         password = (EditText) findViewById(R.id.loginpass);
+        forgot = (TextView) findViewById(R.id.textForgotPass);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +82,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(),SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(),ForgotPassActivity.class);
                 startActivity(intent);
             }
         });

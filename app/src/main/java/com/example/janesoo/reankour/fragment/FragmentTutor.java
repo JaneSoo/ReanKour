@@ -55,7 +55,7 @@ public class FragmentTutor extends Fragment {
                 arrayList.clear();
                 for (DataSnapshot tutorSnapshot : dataSnapshot.getChildren()) {
                     User user = tutorSnapshot.getValue(User.class);
-                    if (user.getAccountType().equals("Tutor"))
+                    if (user.getAccountType().equals("Tutor") && user.getIsPublish().equals("true"))
                     {
                         arrayList.add(user);
                     }

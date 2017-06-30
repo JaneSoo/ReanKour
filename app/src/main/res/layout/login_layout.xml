@@ -48,7 +48,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#6892ed"
+                android:background="#5ebee4"
                 android:textColor="#fff"
                 android:text="Login"/>
 
@@ -66,7 +66,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Signup now!"
-                android:textColor="#2763ef"
+                android:textColor="#46b8f1"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/textForgotPass"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Forgot password?"
+                android:textColor="#f70046"
                 android:textAlignment="center"/>
 
         </LinearLayout>

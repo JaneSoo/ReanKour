@@ -17,6 +17,8 @@ import com.example.janesoo.reankour.DetatilActivity;
 import com.example.janesoo.reankour.R;
 import com.example.janesoo.reankour.fragment.FragmentTutor;
 import com.example.janesoo.reankour.model.User;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -90,6 +92,8 @@ public class TutorAdapter extends BaseAdapter {
                 submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Subscription");
+
                         boolean test = true;
                         if(name.getText().toString().equals("")){
                             name.setError("Required");
@@ -104,6 +108,9 @@ public class TutorAdapter extends BaseAdapter {
                             test = false;
                         }
                         if(test==true){
+                            DatabaseReference databaseReference = mDatabase.child(listofTutor.get(position).getPhone()).child(phone.getText().toString());
+                            databaseReference.setValue("email", email.getText().toString());
+                            databaseReference.setValue("name", name.getText().toString());
                             Toast.makeText(dialog.getContext(),"Thanks, You will be contacted later!", Toast.LENGTH_LONG).show();
                             dialog.dismiss();
                         }
