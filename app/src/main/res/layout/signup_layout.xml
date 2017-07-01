@@ -39,7 +39,9 @@
                 android:text="Account Type"/>
             <Spinner
                 android:layout_marginTop="5dp"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_marginBottom="5dp"
+                android:spinnerMode="dropdown"
                 android:id="@+id/signupAccountType"
                 android:layout_width="match_parent"
                 android:entries="@array/account_type"
@@ -84,14 +86,14 @@
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#6892ed"
+                android:background="#60cef2"
                 android:textColor="#fff"
                 android:text="Signup"/>
             <Button
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#6892ed"
+                android:background="#60cef2"
                 android:textColor="#fff"
                 android:text="Signup with Facebook"/>
 
@@ -109,7 +111,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Login now!"
-                android:textColor="#4b63e9"
+                android:textColor="#60cef2"
+                android:layout_marginBottom="20dp"
                 android:textAlignment="center"/>
 
         </LinearLayout>

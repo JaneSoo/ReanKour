@@ -128,6 +128,7 @@ public class SignUpActivity extends AppCompatActivity {
                     current_user_id.child("skill").setValue("N/A");
                     current_user_id.child("education").setValue("N/A");
                     current_user_id.child("position").setValue("N/A");
+                    current_user_id.child("isPublish").setValue("true");
                     progressDialog.dismiss();
                     Intent intent = new Intent(SignUpActivity.this, AllBottomNavigationViewActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
         android:id="@+id/myprofile"
         android:title="My Profile"
+        android:orderInCategory="100"
+        android:layout_width="35dp"
+        android:layout_height="50dp"
         app:showAsAction="collapseActionView"
         ></item>
-
     <item
+        android:orderInCategory="100"
         android:id="@+id/setting"
+        android:layout_width="35dp"
+        android:layout_height="50dp"
         android:title="Setting"
         app:showAsAction="collapseActionView"
         ></item>
     <item
+        android:orderInCategory="100"
         android:id="@+id/logout"
+        android:layout_width="35dp"
+        android:layout_height="50dp"
         android:title="Logout"
         app:showAsAction="collapseActionView"
         ></item>

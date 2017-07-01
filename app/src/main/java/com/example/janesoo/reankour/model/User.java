@@ -19,13 +19,15 @@ public class User implements Serializable {
     private String phone;
     private String sex;
     private String skill;
+    private String isPublish;
 
     public User(){
 
     }
 
 
-    public User(String position, String accountType, String address, String dob, String education, String email, String experience, String fullname, String phone, String sex, String skill) {
+    public User(String isPublish,String position, String accountType, String address, String dob, String education, String email, String experience, String fullname, String phone, String sex, String skill) {
+        this.isPublish=isPublish;
         this.position=position;
         this.accountType = accountType;
         this.address = address;
@@ -37,6 +39,14 @@ public class User implements Serializable {
         this.phone = phone;
         this.sex = sex;
         this.skill = skill;
+    }
+
+    public String getIsPublish() {
+        return isPublish;
+    }
+
+    public void setIsPublish(String isPublish) {
+        this.isPublish = isPublish;
     }
 
     public String getPosition() {
