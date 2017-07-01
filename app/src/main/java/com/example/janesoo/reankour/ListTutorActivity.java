@@ -2,7 +2,6 @@ package com.example.janesoo.reankour;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -19,7 +18,7 @@ public class ListTutorActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tutors_list_layout);
+        setContentView(R.layout.tutors_item_layout);
 
         detail = (Button) findViewById(R.id.btndetail);
         detail.setOnClickListener(new View.OnClickListener() {

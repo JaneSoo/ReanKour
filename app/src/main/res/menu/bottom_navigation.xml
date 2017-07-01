@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/ic_assignment_ind_black_24dp"
+        android:id="@+id/tutor"
+        android:title="Tutor"
+        android:enabled="true">
+
+    </item>
+
+    <item
+        android:icon="@drawable/ic_library_books_black_24dp"
+        android:id="@+id/subject"
+        android:title="Subject"
+        android:enabled="true">
+
+    </item>
+
+
+
+    <item
+        android:icon="@drawable/ic_movie_filter_black_24dp"
+        android:id="@+id/video"
+        android:title="Video"
+        android:enabled="true">
+
+    </item>
+</menu>
