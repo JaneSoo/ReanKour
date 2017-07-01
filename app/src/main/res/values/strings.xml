@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">ReanKour</string>
+    <string name="app_name">Rean Kour</string>
+    <array name="account_type">
+        <item>Tutor</item>
+        <item>Student</item>
+    </array>
 </resources>
