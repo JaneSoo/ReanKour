@@ -31,6 +31,7 @@ public class DocumentAdapter extends BaseAdapter {
         this.context = context;
     }
 
+
     @Override
     public String toString() {
         return "DocumentAdapter{" +
@@ -56,7 +57,7 @@ public class DocumentAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View myView =inflater.inflate(R.layout.content_list_document,null);
 
@@ -72,17 +73,18 @@ public class DocumentAdapter extends BaseAdapter {
         TextView textViewDate= (TextView) myView.findViewById(R.id.news_date);
         textViewDate.setText(arrayList.get(position).getDate());
 
-       /* Button buttonReadMore=(Button)myView.findViewById(R.id.btn_readMore);
-*/
-       /* buttonReadMore.setOnClickListener(new View.OnClickListener() {
+        Button buttonReadMore=(Button)myView.findViewById(R.id.btn_readMore);
+
+
+
+        buttonReadMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,DetailDocumentActivity.class);
                 intent.putExtra("Content",arrayList.get(position));
                 context.startActivity(intent);
             }
-        });*/
-
+        });
 
 
         return myView;

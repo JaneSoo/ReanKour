@@ -17,8 +17,8 @@ public class DetailDocumentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.document_detail_layout);
 
-        /*Intent intent = getIntent();
-        Document document = (Document) intent.getSerializableExtra("Video");*/
+        Intent intent = getIntent();
+        Document document = (Document) intent.getSerializableExtra("Content");
 
 ///*        name = (TextView) findViewById(R.id.detailName);
 //        add = (TextView) findViewById(R.id.detailAdd);

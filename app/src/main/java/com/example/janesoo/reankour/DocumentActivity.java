@@ -21,8 +21,7 @@ import java.util.List;
  */
 
 public class DocumentActivity extends AppCompatActivity {
-    ListView listView;
-    private ArrayList<Document>arrayList = new ArrayList<>();
+
     Button buttonReadMore;
 
     @Override
@@ -30,14 +29,15 @@ public class DocumentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_document);
 
-       /* buttonReadMore = (Button) findViewById(R.id.btndetail);
+
+       buttonReadMore = (Button) findViewById(R.id.btndetail);
         buttonReadMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DocumentActivity.this,DetailDocumentActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
 
 

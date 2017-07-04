@@ -65,7 +65,7 @@ public class BottomNavigationFragment extends Fragment{
                 }
                 else {
                     pager.setCurrentItem(2);
-                    actionBar.setTitle("Video");
+                    actionBar.setTitle("Content");
                 }
                 return false;
             }
@@ -95,7 +95,7 @@ public class BottomNavigationFragment extends Fragment{
                     activity.setTitle("Subject");
                 }
                 else {
-                    activity.setTitle("Video");
+                    activity.setTitle("Content");
                 }
 
                 bottomNavigationView.getMenu().getItem(position).setChecked(true);
