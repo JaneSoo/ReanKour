@@ -27,12 +27,7 @@ public class SubjectAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<SubjectModel> arrayList=new ArrayList<>();
 
-    /*public SubjectAdapter(Context context, int layout, ArrayList<SubjectModel> listSubject) {
-        this.context = context;
-        this.layout =layout;
-        this.listSubject =listSubject;
 
-    }*/
 
     public SubjectAdapter(ArrayList<SubjectModel> newSubject, Context context) {
         this.arrayList=newSubject;

@@ -29,7 +29,7 @@ public class FragmentSubject extends Fragment{
         this.subjectActivity = subjectActivity;
     }
 
-    private ArrayList<SubjectModel> arrayList=new ArrayList<>();
+
 
 
     @Nullable
