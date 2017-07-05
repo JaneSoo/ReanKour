@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_margin="10dp"
+        android:padding="10dp"
+
+       >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#B3E5FC">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -38,34 +47,27 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/news_content"
+                    android:id="@+id/news_title"
                     android:layout_weight="2"
                     android:textSize="15sp"
                     android:textColor="#000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="The way choose university"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="5dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <ImageView
-                        android:src="@drawable/ic_event_available_black_24dp"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:scaleType="centerCrop"
-                        />
-
                     <TextView
-                        android:id="@+id/news_date"
+                        android:id="@+id/document"
                         android:textSize="15sp"
                         android:textColor="#000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5 June 2017"
-                        />
+                        android:text="There are so many way can help u to choose the best university"
+                        android:layout_margin="5dp"/>
 
                 </LinearLayout>
 
@@ -75,26 +77,31 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageView
-                        android:src="@drawable/ic_location_on_black_24dp"
+                        android:id="@+id/img_calendar"
+                        android:src="@drawable/ic_event_available_black_24dp"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:layout_margin="5dp"/>
+
                     <TextView
-                        android:id="@+id/news_location"
+                        android:id="@+id/news_date"
                         android:textSize="15sp"
                         android:textColor="#000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Phnom Penh"/>
+                        android:text="5 June 2017"
+                        android:paddingRight="30dp"/>
+
                     <Button
                         android:id="@+id/btn_readMore"
-                        android:layout_marginLeft="10dp"
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="99dp"
                         android:layout_height="30dp"
-                        android:padding="5dp"
-                        android:text="Read More"
                         android:background="#469cca"
-                        android:textColor="#fff"/>
+                        android:paddingRight="10dp"
+                        android:text="Read More"
+                        android:textColor="#fff" />
                 </LinearLayout>
 
 
@@ -107,6 +114,7 @@
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
+    </ScrollView>
 
 
 </LinearLayout>

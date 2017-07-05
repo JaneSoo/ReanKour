@@ -8,110 +8,45 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    private String name, sex, email, password, address, skill, phone, education, position, experience;
-    boolean usertype;
-    private int picture;
+    private String accountType;
+    private String address;
+    private String dob;
+    private String position;
+    private String education;
+    private String email;
+    private String experience;
+    private String fullname;
+    private String phone;
+    private String sex;
+    private String skill;
+    private String isPublish;
 
     public User(){
 
     }
 
-    public User(String name, String email, String password, boolean usertype) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.usertype = usertype;
-    }
 
-    public User(String name, String address, String skill, String experience, int picture) {
-        this.name = name;
+    public User(String isPublish,String position, String accountType, String address, String dob, String education, String email, String experience, String fullname, String phone, String sex, String skill) {
+        this.isPublish=isPublish;
+        this.position=position;
+        this.accountType = accountType;
         this.address = address;
-        this.skill = skill;
-        this.experience = experience;
-        this.picture = picture;
-    }
-
-    public User(String sex, String address, String skill, String phone, String education, String position, String experience, int picture) {
-        this.sex = sex;
-        this.address = address;
-        this.skill = skill;
-        this.phone = phone;
+        this.dob = dob;
         this.education = education;
-        this.position = position;
-        this.experience = experience;
-        this.picture = picture;
-    }
-
-    public int getPicture() {
-        return picture;
-    }
-
-    public void setPicture(int picture) {
-        this.picture = picture;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getSkill() {
-        return skill;
-    }
-
-    public void setSkill(String skill) {
+        this.experience = experience;
+        this.fullname = fullname;
+        this.phone = phone;
+        this.sex = sex;
         this.skill = skill;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getIsPublish() {
+        return isPublish;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEducation() {
-        return education;
-    }
-
-    public void setEducation(String education) {
-        this.education = education;
+    public void setIsPublish(String isPublish) {
+        this.isPublish = isPublish;
     }
 
     public String getPosition() {
@@ -122,6 +57,46 @@ public class User implements Serializable {
         this.position = position;
     }
 
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getExperience() {
         return experience;
     }
@@ -130,12 +105,35 @@ public class User implements Serializable {
         this.experience = experience;
     }
 
-    public boolean isUsertype() {
-        return usertype;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setUsertype(boolean usertype) {
-        this.usertype = usertype;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getSkill() {
+        return skill;
+    }
+
+    public void setSkill(String skill) {
+        this.skill = skill;
+    }
 }
