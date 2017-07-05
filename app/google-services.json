@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "112891017104",
+    "firebase_url": "https://rean-kour-application.firebaseio.com",
+    "project_id": "rean-kour-application",
+    "storage_bucket": "rean-kour-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112891017104:android:c7542d746c361c47",
+        "android_client_info": {
+          "package_name": "com.example.janesoo.reankour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112891017104-b7g4j6e3e2i0ijnu80gjh6n5fghhre4d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.janesoo.reankour",
+            "certificate_hash": "aa72c99f6c00c1d69fd093cdbce4f32cc2c159c1"
+          }
+        },
+        {
+          "client_id": "112891017104-otsietoubdb81f3e3g5fkce1qhbt0kp1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIXoWrO4iLhebJQnXRleZe59lpzgR5MRs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112891017104-otsietoubdb81f3e3g5fkce1qhbt0kp1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
