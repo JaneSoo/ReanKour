@@ -15,7 +15,7 @@ import com.google.android.youtube.player.YouTubePlayer;
 import java.util.ArrayList;
 
 import static android.provider.MediaStore.Video.Thumbnails.VIDEO_ID;
-/*import static com.example.janesoo.reankour.videoActivity.VIDEO_ID;*/
+/*import static com.example.janesoo.reankour.videos.VIDEO_ID;*/
 
 /**
  * Created by Sor Phorn on 7/3/2017.
@@ -25,11 +25,6 @@ public class VideoTestActivity extends AppCompatActivity implements YouTubePlaye
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-
-//    String[] names = {"How to develop your self", "Scholarship to singapore", "How to choose university", "How to improve your self"};
-//
-//    String[] artises = {"Mike Posner", "Lukas Graham", "Zayn", "Fifth Harmony"};
-//    String[] dates = {"13 June 2017 ", "18 May 2017", "03 April 2017", "23 October 2017", };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
