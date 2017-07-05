@@ -154,7 +154,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/university"/>
+                    android:src="@drawable/universityicon"/>
                 <TextView
                     android:paddingLeft="20dp"
                     android:layout_marginTop="5dp"
