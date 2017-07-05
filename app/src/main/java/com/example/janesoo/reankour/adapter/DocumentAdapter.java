@@ -1,13 +1,16 @@
 package com.example.janesoo.reankour.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.janesoo.reankour.DetailDocumentActivity;
 import com.example.janesoo.reankour.R;
 import com.example.janesoo.reankour.model.Document;
 
@@ -23,11 +26,11 @@ public class DocumentAdapter extends BaseAdapter {
     private int layout;
     private Context context;
 
-    public DocumentAdapter(ArrayList<Document> arrayList, int layout, Context context) {
+    public DocumentAdapter(ArrayList<Document> arrayList, Context context) {
         this.arrayList = arrayList;
-        this.layout = layout;
         this.context = context;
     }
+
 
     @Override
     public String toString() {
@@ -54,7 +57,7 @@ public class DocumentAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View myView =inflater.inflate(R.layout.content_list_document,null);
 
@@ -69,6 +72,20 @@ public class DocumentAdapter extends BaseAdapter {
 
         TextView textViewDate= (TextView) myView.findViewById(R.id.news_date);
         textViewDate.setText(arrayList.get(position).getDate());
+
+        Button buttonReadMore=(Button)myView.findViewById(R.id.btn_readMore);
+
+
+
+        buttonReadMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,DetailDocumentActivity.class);
+                intent.putExtra("Content",arrayList.get(position));
+                context.startActivity(intent);
+            }
+        });
+
 
         return myView;
     }

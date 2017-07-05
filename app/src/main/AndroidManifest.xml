@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.janesoo.reankour">
 
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19"/>
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -18,10 +22,12 @@
         android:name=".reankour"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".SubjectActivity">
+
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -29,8 +35,14 @@
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".ListTutorActivity"></activity>
         <activity android:name=".DetatilActivity"></activity>
+        <activity android:name=".DocumentActivity"></activity>
+        <activity android:name=".DetailDocumentActivity"></activity>
         <activity android:name=".SignUpActivity"></activity>
         <activity android:name=".AllBottomNavigationViewActivity"></activity>
+        <activity android:name=".StudentProfileActivity"></activity>
+        <activity android:name=".TutorProfileActivity"></activity>
+        <activity android:name=".ForgotPassActivity"></activity>
+
 
     </application>
 

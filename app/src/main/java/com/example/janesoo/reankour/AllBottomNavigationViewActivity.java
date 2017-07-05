@@ -1,5 +1,4 @@
 package com.example.janesoo.reankour;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,10 +8,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.janesoo.reankour.adapter.TutorAdapter;
 import com.example.janesoo.reankour.fragment.BottomNavigationFragment;
+import com.example.janesoo.reankour.model.User;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 /**
  * Created by JaneSoo on 17-Jun-17.
@@ -22,12 +28,13 @@ public class AllBottomNavigationViewActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sample_layout);
-
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener(){
             @Override
@@ -57,11 +64,34 @@ public class AllBottomNavigationViewActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.myprofile){
-            Intent intent = new Intent(getBaseContext(),DetatilActivity.class);
-            startActivity(intent);
+            DatabaseReference mRef = databaseReference.child(mAuth.getCurrentUser().getUid());
+            mRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                        User user = dataSnapshot.getValue(User.class);
+                        if (user.getAccountType().equals("Tutor"))
+                        {
+                            Intent intent = new Intent(getBaseContext(),TutorProfileActivity.class);
+                            intent.putExtra("user", user);
+                            startActivity(intent);
+                        }
+                        else{
+                            Intent intent = new Intent(getBaseContext(),StudentProfileActivity.class);
+                            intent.putExtra("user",user);
+                            startActivity(intent);
+                        }
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
         }
         if(item.getItemId() == R.id.setting){
-            Intent intent = new Intent(getBaseContext(),DetatilActivity.class);
+            Intent intent = new Intent(AllBottomNavigationViewActivity.this,TutorProfileActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
 
         }

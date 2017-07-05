@@ -27,10 +27,11 @@
                         android:layout_height="100dp"
                         android:layout_margin="5dp"
                         android:scaleType="centerCrop"
-                        />
+                        android:src="@drawable/ic_account_circle_black_24dp"/>
 
                     <RatingBar
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         style = "?android:attr/ratingBarStyleSmall"
                         android:stepSize="0.5"
                         android:numStars="5"
@@ -91,25 +92,29 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
+                        android:layout_height="match_parent"
                         android:orientation="horizontal">
                         <Button
                             android:id="@+id/btnCall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="40dp"
                             android:padding="5dp"
                             android:text="Contact"
-                            android:background="#469cca"
+                            android:background="#2abdda"
                             android:textColor="#fff"/>
 
                         <Button
+                            android:layout_gravity="bottom"
                             android:id="@+id/btndetail"
                             android:layout_marginLeft="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="40dp"
                             android:padding="5dp"
                             android:text="Detail"
-                            android:background="#469cca"
+                            android:background="#2abdda"
                             android:textColor="#fff"/>
 
                     </LinearLayout>

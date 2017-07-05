@@ -12,6 +12,7 @@ public class Document implements Serializable {
     String doc_content;
     String date;
 
+    public Document(){}
 
     public int getDoc_img() {
         return doc_img;

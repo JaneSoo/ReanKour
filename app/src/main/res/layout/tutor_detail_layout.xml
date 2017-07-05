@@ -24,6 +24,7 @@
                 app:civ_border_width="3dp"
                 app:civ_border_color="#fff"/>
             <TextView
+                android:id="@+id/topName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Chim Kanitha"
@@ -31,10 +32,12 @@
                 android:fontFamily="cursive"
                 android:textSize="35sp"/>
             <TextView
+                android:id="@+id/topSkill"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Android Developer"/>
             <TextView
+                android:id="@+id/topAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Phnom Penh, Cambodia"
@@ -193,12 +196,13 @@
         <Button
             android:id="@+id/detailBtnMessage"
             android:layout_gravity="end"
-            android:background="#86ddea"
+            android:background="#2abdda"
             android:layout_marginRight="20dp"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:textColor="#fff"
-            android:text="Leave Message"/>
+            android:text="Leave Message"
+            android:layout_marginBottom="20dp"/>
     </LinearLayout>
 
 </ScrollView>
