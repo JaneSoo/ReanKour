@@ -18,7 +18,7 @@
         android:name=".reankour"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".VideoActivity">
+        <activity android:name=".SubjectActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

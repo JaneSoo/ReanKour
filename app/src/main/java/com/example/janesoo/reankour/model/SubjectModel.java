@@ -29,4 +29,5 @@ public class SubjectModel {
         this.image = image;
 
     }
+
 }
