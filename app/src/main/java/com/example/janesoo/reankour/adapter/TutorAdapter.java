@@ -36,7 +36,6 @@ public class TutorAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<User> listofTutor;
     private int layout;
-    DetatilActivity detatilActivity;
     StorageReference storageReference;
 
     public TutorAdapter(Context context, int layout, ArrayList<User> listofTutor){
