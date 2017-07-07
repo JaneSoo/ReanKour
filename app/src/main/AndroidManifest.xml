@@ -25,7 +25,6 @@
 
         <activity android:name=".MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -38,10 +37,14 @@
         <activity android:name=".DocumentActivity"></activity>
         <activity android:name=".DetailDocumentActivity"></activity>
         <activity android:name=".SignUpActivity"></activity>
-        <activity android:name=".AllBottomNavigationViewActivity"></activity>
+        <activity android:name=".AllBottomNavigationViewActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+        </activity>
         <activity android:name=".StudentProfileActivity"></activity>
         <activity android:name=".TutorProfileActivity"></activity>
         <activity android:name=".ForgotPassActivity"></activity>
+        <activity android:name=".EditStudentActivity"></activity>
+        <activity android:name=".EditTutorActivity"></activity>
 
 
     </application>

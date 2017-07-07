@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.janesoo.reankour.adapter.TutorAdapter;
 import com.example.janesoo.reankour.fragment.BottomNavigationFragment;
@@ -85,12 +86,11 @@ public class AllBottomNavigationViewActivity extends AppCompatActivity {
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-
                 }
             });
         }
         if(item.getItemId() == R.id.setting){
-            Intent intent = new Intent(AllBottomNavigationViewActivity.this,TutorProfileActivity.class);
+            Intent intent = new Intent(AllBottomNavigationViewActivity.this,StudentProfileActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
 
