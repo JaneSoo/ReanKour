@@ -167,7 +167,11 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+<<<<<<< HEAD
+                    android:src="@drawable/universityicon"/>
+=======
                     android:src="@drawable/openbook"/>
+>>>>>>> 947f90d444ca664007a362149cbb0e90e19c5c0b
                 <TextView
                     android:paddingLeft="20dp"
                     android:layout_marginTop="5dp"

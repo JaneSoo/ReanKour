@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="250dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/university" />
+            android:src="@drawable/universityicon" />
     </LinearLayout>
     <android.support.v7.widget.CardView
         app:cardCornerRadius="5dp"
