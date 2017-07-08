@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.example.janesoo.reankour.fragment.FragmentSubject;
 import com.example.janesoo.reankour.fragment.FragmentTutor;
-import com.example.janesoo.reankour.fragment.FragmentVideo;
+import com.example.janesoo.reankour.fragment.FragmentContent;
 
 /**
  * Created by JaneSoo on 18-Jun-17.
@@ -27,7 +27,7 @@ public class BottomNavigationPagerAdapter extends FragmentStatePagerAdapter {
         }
         else
         {
-            return new FragmentVideo();
+            return new FragmentContent();
         }
 
     }

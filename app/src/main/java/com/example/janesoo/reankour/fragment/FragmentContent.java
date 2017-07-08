@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * Created by JaneSoo on 17-Jun-17.
  */
 
-public class FragmentVideo extends Fragment {
+public class FragmentContent extends Fragment {
     ListView listView;
     DocumentAdapter documentAdapter;
     DocumentActivity documentActivity;
@@ -38,16 +38,7 @@ public class FragmentVideo extends Fragment {
         ArrayList<Document> newDocument =new ArrayList<>();
 
 
-<<<<<<< HEAD
-        newDocument.add(new Document(R.drawable.universityicon,"The way to find universityicon","There are so many to choose the universityicon in cambodia","12 June 17"));
-        newDocument.add(new Document(R.drawable.speaking,"How to speak English","There are so many way that can help you to speak English very well","19 June 17"));
-        newDocument.add(new Document(R.drawable.scholarship,"Scholarship","Scholarship to openning now such as Singapore, Korea, Indonesi","10 June 17"));
-        newDocument.add(new Document(R.drawable.develop,"How to develop yourself","There are so many that can develop yourself to be stronger ","12 June 17"));
-        newDocument.add(new Document(R.drawable.content1,"The way to find universityicon","There are so many to choose the universityicon in cambodia","12 June 17"));
-        newDocument.add(new Document(R.drawable.content2,"How to speak English","There are so many way that can help you to speak English very well","19 June 17"));
-        newDocument.add(new Document(R.drawable.content3,"Scholarship","Scholarship to openning now such as Singapore, Korea, Indonesi","10 June 17"));
-        newDocument.add(new Document(R.drawable.content4,"How to develop yourself","There are so many that can develop yourself to be stronger ","12 June 17"));
-=======
+
         newDocument.add(new Document(R.drawable.pic,"The way to find university","There are so many to choose the university in cambodia","12 June 17"));
         newDocument.add(new Document(R.drawable.pic,"How to speak English","There are so many way that can help you to speak English very well","19 June 17"));
         newDocument.add(new Document(R.drawable.pic,"Scholarship","Scholarship to openning now such as Singapore, Korea, Indonesi","10 June 17"));
@@ -56,7 +47,6 @@ public class FragmentVideo extends Fragment {
         newDocument.add(new Document(R.drawable.pic,"How to speak English","There are so many way that can help you to speak English very well","19 June 17"));
         newDocument.add(new Document(R.drawable.pic,"Scholarship","Scholarship to openning now such as Singapore, Korea, Indonesi","10 June 17"));
         newDocument.add(new Document(R.drawable.pic,"How to develop yourself","There are so many that can develop yourself to be stronger ","12 June 17"));
->>>>>>> 947f90d444ca664007a362149cbb0e90e19c5c0b
 
         documentAdapter=new DocumentAdapter(newDocument,getContext());
         listView.setAdapter(documentAdapter);
