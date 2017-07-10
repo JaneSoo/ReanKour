@@ -26,15 +26,16 @@
                     android:src="@drawable/ic_account_circle_black_24dp"
                     app:civ_border_width="3dp"
                     app:civ_border_color="#fff"/>
+
                 <TextView
                     android:id="@+id/proTopName"
-                    android:layout_margin="5dp"
-                    android:textColor="#286ce2"
-                    android:textAlignment="center"
-                    android:textSize="15dp"
-                    android:text="Kor koemsreang"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Kor koemsreang"
+                    android:textAlignment="center"
+                    android:textColor="#286ce2"
+                    />
             </LinearLayout>
             <LinearLayout
                 android:layout_margin="25dp"
@@ -56,7 +57,6 @@
                         android:orientation="vertical">
                         <TextView
                             android:textAlignment="center"
-                            android:textSize="15dp"
                             android:textStyle="bold"
                             android:layout_weight="1"
                             android:text="0"
@@ -64,7 +64,6 @@
                             android:layout_height="match_parent" />
                         <TextView
                             android:textAlignment="center"
-                            android:textSize="15dp"
                             android:textStyle="bold"
                             android:layout_weight="1"
                             android:text="Inbox"
@@ -79,20 +78,20 @@
                         android:orientation="vertical">
                         <TextView
                             android:textAlignment="center"
-                            android:textSize="15dp"
                             android:textStyle="bold"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="0"/>
+
                         <TextView
-                            android:textAlignment="center"
-                            android:textSize="15dp"
-                            android:textStyle="bold"
-                            android:layout_weight="1"
+                            android:id="@+id/textView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="New"/>
+                            android:layout_weight="1"
+                            android:text="New"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -102,20 +101,20 @@
                         android:orientation="vertical">
                         <TextView
                             android:textAlignment="center"
-                            android:textSize="15dp"
                             android:textStyle="bold"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="0"/>
+
                         <TextView
-                            android:textAlignment="center"
-                            android:textSize="15dp"
-                            android:textStyle="bold"
-                            android:layout_weight="1"
+                            android:id="@+id/textView2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="other"/>
+                            android:layout_weight="1"
+                            android:text="other"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -124,12 +123,14 @@
                     android:layout_margin="10dp"
                     android:id="@+id/proEdit"
                     android:background="#86ddea"
-                    android:textColor="#fff"
                     android:text="Edit Profile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
+        <view
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"/>
 
         <LinearLayout
             android:layout_margin="10dp"
@@ -144,11 +145,10 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/man"/>
+                    android:src="@drawable/ic_accountsetting_circle_black_24dp"/>
                 <TextView
                     android:paddingLeft="20dp"
                     android:layout_marginTop="5dp"
-                    android:textSize="20dp"
                     android:id="@+id/proName"
                     android:text="kor koemsreang"
                     android:layout_width="wrap_content"
@@ -156,9 +156,9 @@
 
 
             </LinearLayout>
-            <!--<view-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="0.5dp"/>-->
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"/>
             <LinearLayout
                 android:layout_margin="10dp"
                 android:orientation="horizontal"
@@ -167,24 +167,21 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-<<<<<<< HEAD
-                    android:src="@drawable/universityicon"/>
-=======
-                    android:src="@drawable/openbook"/>
->>>>>>> 947f90d444ca664007a362149cbb0e90e19c5c0b
+
+                    android:src="@drawable/ic_home_black_24dp"/>
+
                 <TextView
-                    android:paddingLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:textSize="20dp"
-                    android:text="School"
                     android:id="@+id/proSchool"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="20dp"
+                    android:text="School" />
 
             </LinearLayout>
-            <!--<view-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="0.5dp"/>-->
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"/>
 
             <LinearLayout
                 android:layout_margin="10dp"
@@ -194,11 +191,10 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/openbook"/>
+                    android:src="@drawable/ic_school_black_24dp"/>
                 <TextView
                     android:paddingLeft="20dp"
                     android:layout_marginTop="5dp"
-                    android:textSize="20dp"
                     android:id="@+id/proEdu"
                     android:text="Education"
                     android:layout_width="wrap_content"
@@ -206,22 +202,21 @@
 
             </LinearLayout>
 
-            <!--<view-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="0.5dp"/>-->
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"/>
 
             <TextView
                 android:paddingTop="10dp"
                 android:textColor="#0e0e0e"
                 android:layout_margin="10dp"
                 android:textStyle="bold"
-                android:textSize="20dp"
                 android:text="PRIVATE INFORMATION"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-            <!--<view-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="0.5dp"/>-->
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"/>
 
         </LinearLayout>
 
@@ -238,12 +233,11 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/mail"/>
+                    android:src="@drawable/ic_email_black_24dp"/>
                 <TextView
                     android:paddingLeft="20dp"
                     android:layout_marginTop="5dp"
                     android:id="@+id/proEmail"
-                    android:textSize="20dp"
                     android:text="korkoemsreang@gmail.com"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -251,9 +245,9 @@
 
             </LinearLayout>
 
-            <!--<view-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="0.5dp"/>-->
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"/>
             <LinearLayout
                 android:layout_margin="10dp"
                 android:orientation="horizontal"
@@ -262,20 +256,19 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/smartphone"/>
+                    android:src="@drawable/ic_phone_iphone_black_24dp"/>
                 <TextView
                     android:paddingLeft="20dp"
                     android:layout_marginTop="5dp"
-                    android:textSize="20dp"
                     android:id="@+id/proPhone"
                     android:text="+85586736302"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
-            <!--<view-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="0.5dp"/>-->
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"/>
 
             <LinearLayout
                 android:layout_margin="10dp"
@@ -289,16 +282,15 @@
                 <TextView
                     android:paddingLeft="20dp"
                     android:layout_marginTop="5dp"
-                    android:textSize="20dp"
                     android:text="Female"
                     android:id="@+id/proSex"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
-            <!--<view-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="0.5dp"/>-->
+            <view
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"/>
 
         </LinearLayout>
 
