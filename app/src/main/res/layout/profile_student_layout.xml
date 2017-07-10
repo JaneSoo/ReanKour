@@ -32,10 +32,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+
                     android:text="Kor koemsreang"
                     android:textAlignment="center"
                     android:textColor="#286ce2"
                     />
+                    android:textColor="#3c3c3d"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:text="Kor koemsreang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
                 android:layout_margin="25dp"
@@ -128,9 +135,6 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
-        <view
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"/>
 
         <LinearLayout
             android:layout_margin="10dp"
@@ -156,9 +160,6 @@
 
 
             </LinearLayout>
-            <view
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"/>
             <LinearLayout
                 android:layout_margin="10dp"
                 android:orientation="horizontal"
@@ -179,9 +180,6 @@
                     android:text="School" />
 
             </LinearLayout>
-            <view
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"/>
 
             <LinearLayout
                 android:layout_margin="10dp"
@@ -201,11 +199,6 @@
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
-
-            <view
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"/>
-
             <TextView
                 android:paddingTop="10dp"
                 android:textColor="#0e0e0e"
@@ -214,9 +207,6 @@
                 android:text="PRIVATE INFORMATION"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-            <view
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"/>
 
         </LinearLayout>
 
@@ -245,9 +235,7 @@
 
             </LinearLayout>
 
-            <view
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"/>
+
             <LinearLayout
                 android:layout_margin="10dp"
                 android:orientation="horizontal"
@@ -266,9 +254,7 @@
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
-            <view
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"/>
+
 
             <LinearLayout
                 android:layout_margin="10dp"
@@ -288,9 +274,7 @@
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
-            <view
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"/>
+
 
         </LinearLayout>
 

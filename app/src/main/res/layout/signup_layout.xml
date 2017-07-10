@@ -89,13 +89,6 @@
                 android:background="#60cef2"
                 android:textColor="#fff"
                 android:text="Signup"/>
-            <Button
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#60cef2"
-                android:textColor="#fff"
-                android:text="Signup with Facebook"/>
 
             <TextView
                 android:textSize="20dp"

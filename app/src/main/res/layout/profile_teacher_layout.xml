@@ -28,10 +28,10 @@
                 <TextView
                     android:id="@+id/proTopName"
                     android:layout_margin="5dp"
-                    android:textColor="#286ce2"
+                    android:textColor="#494949"
                     android:textAlignment="center"
                     android:text="Kor koemsreang"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
@@ -156,7 +156,6 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:src="@drawable/ic_home_black_24dp"/>
 
                 <TextView
@@ -238,12 +237,27 @@
                     />
 
             </LinearLayout>
+            <!--android:layout_height="0.5dp"/>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
-            <!--<view-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="1dp"/>-->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_home_black_24dp" />
 
+                <TextView
+                    android:id="@+id/proExperience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="20dp"
+                    android:text="Experience" />
 
+            </LinearLayout>
 
             <TextView
                 android:paddingTop="10dp"

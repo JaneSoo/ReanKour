@@ -30,12 +30,13 @@
                         android:id="@+id/profile_image"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:src="@drawable/taa"
+                        android:src="@drawable/ic_account_circle_black_24dp"
                         app:civ_border_width="3dp"
                         app:civ_border_color="#fff"/>
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="#286ce2"
+                        android:textColor="#71dce6"
+                        android:id="@+id/changePhoto"
                         android:textSize="15dp"
                         android:text="Change Photo"
                         android:layout_width="wrap_content"
@@ -58,9 +59,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="20dp"
                     android:layout_weight="2"
-                    android:textStyle="italic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Name"
@@ -68,6 +68,7 @@
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
+                    android:id="@+id/edtName"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your name"
                     android:layout_width="match_parent"
@@ -84,13 +85,13 @@
                 <TextView
                     android:layout_marginTop="15dp"
                     android:layout_weight="2"
-                    android:textStyle="italic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Adress"/>
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
+                    android:id="@+id/edtAddress"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your website"
                     android:layout_width="match_parent"
@@ -109,11 +110,11 @@
                     android:layout_weight="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Skill"
-                    android:textStyle="italic"/>
+                    android:text="Skill"/>
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
+                    android:id="@+id/edtSkill"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your status"
                     android:layout_width="match_parent"
@@ -130,11 +131,11 @@
                     android:layout_weight="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Education"
-                    android:textStyle="italic"/>
+                    android:text="Education" />
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
+                    android:id="@+id/edtEdu"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your status"
                     android:layout_width="match_parent"
@@ -151,23 +152,38 @@
                     android:layout_weight="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Current"
-                    android:textStyle="italic"/>
+                    android:text="Current" />
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
+                    android:id="@+id/edtPosi"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Experience" />
+                <EditText
+                    android:layout_weight="0.7"
+                    android:textColor="#0d0c0c"
+                    android:id="@+id/edtExperience"
+                    android:layout_marginTop="5dp"
+                    android:hint="Enter your status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-
-
-
-
-
+            </LinearLayout>
 
             <TextView
                 android:paddingTop="10dp"
@@ -195,12 +211,13 @@
                     android:layout_weight="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Email"
-                    android:textStyle="italic" />
+                    android:text="Email" />
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
                     android:layout_marginTop="5dp"
+                    android:focusable="false"
+                    android:id="@+id/edtEmail"
                     android:hint="Enter your email"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -216,13 +233,13 @@
                 <TextView
                     android:layout_marginTop="15dp"
                     android:layout_weight="2"
-                    android:textStyle="italic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Tel"/>
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
+                    android:id="@+id/edtPhone"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your phone Number"
                     android:layout_width="match_parent"
@@ -240,10 +257,10 @@
                     android:layout_weight="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Gender"
-                    android:textStyle="italic"/>
+                    android:text="Gender"/>
                 <EditText
                     android:layout_weight="0.7"
+                    android:id="@+id/edtGender"
                     android:textColor="#0d0c0c"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your gender"
@@ -259,14 +276,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:background="#f7f3f4"
+                android:background="#e1d9da"
                 android:layout_margin="10dp"
                 android:layout_weight="2"
+                android:textColor="#fff"
                 android:text="cancel"
+                android:id="@+id/btnCancel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
             <Button
-                android:background="#5350a4"
+                android:background="#7bc2e9"
+                android:id="@+id/btnSave"
+                android:textColor="#fff"
                 android:layout_margin="10dp"
                 android:layout_weight="2"
                 android:text="save"

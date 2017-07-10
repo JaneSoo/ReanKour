@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -36,13 +37,16 @@ public class TutorProfileActivity extends AppCompatActivity {
 
     ImageView profile_image;
     private StorageReference storageReference;
-    TextView nametop, name, address, skill, edu, position, email, phone, gender;
+    TextView nametop, name, address, skill, experience,edu, position, email, phone, gender;
     Button edit;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_teacher_layout);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Profile");
 
         Intent intent = getIntent();
         final User user = (User) intent.getSerializableExtra("user");
@@ -56,6 +60,7 @@ public class TutorProfileActivity extends AppCompatActivity {
         email = (TextView) findViewById(R.id.proEmail);
         phone = (TextView) findViewById(R.id.proNum);
         gender = (TextView) findViewById(R.id.proSex);
+        experience = (TextView) findViewById(R.id.proExperience);
 
         profile_image = (ImageView) findViewById(R.id.profile_image);
 
@@ -79,6 +84,7 @@ public class TutorProfileActivity extends AppCompatActivity {
         email.setText(user.getEmail().toString());
         phone.setText(user.getPhone().toString());
         gender.setText(user.getSex().toString());
+        experience.setText(user.getExperience());
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,45 +96,3 @@ public class TutorProfileActivity extends AppCompatActivity {
         });
     }
 }
-
-
-
-
-//        profie_image = (ImageView) findViewById(profile_image);
-//        storageReference = FirebaseStorage.getInstance().getReference().child("Profile");
-//        mAuth = FirebaseAuth.getInstance();
-//
-//        storageReference.child(mAuth.getCurrentUser().getEmail()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//            @Override
-//            public void onSuccess(Uri uri) {
-//                Glide.with(getBaseContext()).load(uri).into(profie_image);
-//            }
-//        });
-//        profie_image.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent= new Intent(Intent.ACTION_PICK);
-//                intent.setType("image/*");
-//                startActivityForResult(intent, Galary);
-//            }
-//        });
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        progress.setMessage("Loading...");
-//        progress.show();
-//        if(requestCode == Galary && resultCode == RESULT_OK){
-//            Uri uri = data.getData();
-//            StorageReference storepath = storageReference.child(mAuth.getCurrentUser().getEmail());
-//
-//            storepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                @Override
-//                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                    progress.dismiss();
-//                    Uri downloadUri = taskSnapshot.getDownloadUrl();
-//                    Glide.with(TutorProfileActivity.this).load(downloadUri).into(profie_image);
-//                }
-//            });
-//        }
-//    }
