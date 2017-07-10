@@ -21,7 +21,7 @@
     <item
         android:icon="@drawable/ic_movie_filter_black_24dp"
         android:id="@+id/video"
-        android:title="Video"
+        android:title="Content"
         android:enabled="true">
 
     </item>
