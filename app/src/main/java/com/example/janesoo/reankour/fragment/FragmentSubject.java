@@ -40,16 +40,16 @@ public class FragmentSubject extends Fragment{
 
         ArrayList<SubjectModel> newSubject=new ArrayList<>();
 
-        newSubject.add(new SubjectModel("physic",R.drawable.physic));
-        newSubject.add(new SubjectModel("english",R.drawable.english));
-        newSubject.add(new SubjectModel("math",R.drawable.math));
-        newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry));
-        newSubject.add(new SubjectModel("biology",R.drawable.biology));
-        newSubject.add(new SubjectModel("physic",R.drawable.physic));
-        newSubject.add(new SubjectModel("english",R.drawable.english));
-        newSubject.add(new SubjectModel("math",R.drawable.math));
-        newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry));
-        newSubject.add(new SubjectModel("biology",R.drawable.biology));
+//        newSubject.add(new SubjectModel("physic",R.drawable.physic));
+//        newSubject.add(new SubjectModel("english",R.drawable.english));
+//        newSubject.add(new SubjectModel("math",R.drawable.math));
+//        newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry));
+//        newSubject.add(new SubjectModel("biology",R.drawable.biology));
+//        newSubject.add(new SubjectModel("physic",R.drawable.physic));
+//        newSubject.add(new SubjectModel("english",R.drawable.english));
+//        newSubject.add(new SubjectModel("math",R.drawable.math));
+//        newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry));
+//        newSubject.add(new SubjectModel("biology",R.drawable.biology));
 
 
         adapter=new SubjectAdapter(newSubject,getContext());
