@@ -37,8 +37,6 @@ public class FragmentContent extends Fragment {
         Button buttonReadMore=(Button)myView.findViewById(R.id.btn_readMore);
         ArrayList<Document> newDocument =new ArrayList<>();
 
-
-
         newDocument.add(new Document(R.drawable.pic,"The way to find university","There are so many to choose the university in cambodia","12 June 17"));
         newDocument.add(new Document(R.drawable.pic,"How to speak English","There are so many way that can help you to speak English very well","19 June 17"));
         newDocument.add(new Document(R.drawable.pic,"Scholarship","Scholarship to openning now such as Singapore, Korea, Indonesi","10 June 17"));
@@ -47,6 +45,7 @@ public class FragmentContent extends Fragment {
         newDocument.add(new Document(R.drawable.pic,"How to speak English","There are so many way that can help you to speak English very well","19 June 17"));
         newDocument.add(new Document(R.drawable.pic,"Scholarship","Scholarship to openning now such as Singapore, Korea, Indonesi","10 June 17"));
         newDocument.add(new Document(R.drawable.pic,"How to develop yourself","There are so many that can develop yourself to be stronger ","12 June 17"));
+
 
         documentAdapter=new DocumentAdapter(newDocument,getContext());
         listView.setAdapter(documentAdapter);
