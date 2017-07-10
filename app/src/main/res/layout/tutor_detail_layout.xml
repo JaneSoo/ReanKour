@@ -13,6 +13,14 @@
             android:gravity="center"
             android:background="#eaf1f7"
             android:orientation="vertical">
+            <TextView
+                android:layout_gravity="right"
+                android:id="@+id/ratenow"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#f91e58"
+                android:text="RATE NOW"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -197,12 +205,10 @@
             android:id="@+id/detailBtnMessage"
             android:layout_gravity="end"
             android:background="#2abdda"
-            android:layout_marginRight="20dp"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#fff"
-            android:text="Leave Message"
-            android:layout_marginBottom="20dp"/>
+            android:text="Leave Message" />
     </LinearLayout>
 
 </ScrollView>

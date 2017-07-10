@@ -35,7 +35,7 @@
                         app:civ_border_color="#fff"/>
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="#286ce2"
+                        android:textColor="#53def1"
                         android:textSize="15dp"
                         android:text="Change Photo"
                         android:id="@+id/changePhoto"
@@ -61,13 +61,13 @@
                 <TextView
                     android:layout_marginTop="15dp"
                     android:layout_weight="2"
-                    android:textStyle="italic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Name"
                     />
                 <EditText
                     android:layout_weight="0.7"
+                    android:id="@+id/edtName"
                     android:textColor="#0d0c0c"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your name"
@@ -85,13 +85,13 @@
                 <TextView
                     android:layout_marginTop="15dp"
                     android:layout_weight="2"
-                    android:textStyle="italic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                    android:text="School"/>
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
+                    android:id="@+id/edtSchool"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your website"
                     android:layout_width="match_parent"
@@ -110,11 +110,11 @@
                     android:layout_weight="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                   android:text="Education"
-                    android:textStyle="italic"/>
+                    android:text="Education" />
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
+                    android:id="@+id/edtEdu"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your status"
                     android:layout_width="match_parent"
@@ -145,16 +145,20 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_weight="2"
+                    android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Email"
-                    android:textStyle="italic" />
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="2"
+                    android:text="Email" />
+
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
+                    android:id="@+id/edtEmail"
+                    android:focusable="false"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your email"
                     android:layout_width="match_parent"
@@ -171,13 +175,13 @@
                 <TextView
                     android:layout_marginTop="15dp"
                     android:layout_weight="2"
-                    android:textStyle="italic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Tel"/>
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
+                    android:id="@+id/edtNum"
                     android:layout_marginTop="5dp"
                     android:hint="Enter your phone Number"
                     android:layout_width="match_parent"
@@ -195,12 +199,12 @@
                     android:layout_weight="2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Gender"
-                    android:textStyle="italic"/>
+                    android:text="Gender" />
                 <EditText
                     android:layout_weight="0.7"
                     android:textColor="#0d0c0c"
                     android:layout_marginTop="5dp"
+                    android:id="@+id/edtSex"
                     android:hint="Enter your gender"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -214,15 +218,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:background="#f7f4f5"
+                android:id="@+id/btnCancel"
+                android:background="#cecacb"
                 android:layout_margin="10dp"
                 android:layout_weight="2"
+                android:textColor="#fff"
                 android:text="cancel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
             <Button
-                android:background="#5350a4"
+                android:id="@+id/btnSave"
+                android:background="#5fcce4"
                 android:layout_margin="10dp"
+                android:textColor="#fff"
                 android:layout_weight="2"
                 android:text="save"
                 android:layout_width="match_parent"

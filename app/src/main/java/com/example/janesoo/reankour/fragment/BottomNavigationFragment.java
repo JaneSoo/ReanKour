@@ -50,11 +50,11 @@ public class BottomNavigationFragment extends Fragment{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         adapter = new BottomNavigationPagerAdapter(getFragmentManager());
-
+        final ActionBar actionBar = activity.getSupportActionBar();
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                ActionBar actionBar = activity.getSupportActionBar();
+
                 if(item.getItemId() == R.id.tutor){
                     pager.setCurrentItem(0);
                     actionBar.setTitle("Tutor");
@@ -89,13 +89,13 @@ public class BottomNavigationFragment extends Fragment{
                 }
 
                 if(position== 0){
-                    activity.setTitle("Tutor");
+                    actionBar.setTitle("Tutor");
                 }
                 else if(position == 1){
-                    activity.setTitle("Subject");
+                    actionBar.setTitle("Subject");
                 }
                 else {
-                    activity.setTitle("Content");
+                    actionBar.setTitle("Content");
                 }
 
                 bottomNavigationView.getMenu().getItem(position).setChecked(true);
