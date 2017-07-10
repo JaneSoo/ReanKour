@@ -1,5 +1,6 @@
 package com.example.janesoo.reankour;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +10,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -30,11 +33,11 @@ import static com.example.janesoo.reankour.R.layout.activity;
 public class DetatilActivity extends AppCompatActivity {
 
     private StorageReference storageReference;
-    private Context context;
+    Context context;
     ProgressDialog progress;
     ImageView profile_image;
 
-    TextView name, add, skill, education, position, email, number, topname, topskill, topadd;
+    TextView name, add, skill, education, position, email, number, topname, topskill, topadd, rate;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +45,9 @@ public class DetatilActivity extends AppCompatActivity {
         setContentView(R.layout.tutor_detail_layout);
 
         progress = new ProgressDialog(this);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Detail Info");
 
         Intent intent = getIntent();
         User user = (User) intent.getSerializableExtra("Tutor");
@@ -56,6 +62,7 @@ public class DetatilActivity extends AppCompatActivity {
         topname = (TextView) findViewById(R.id.topName);
         topskill = (TextView) findViewById(R.id.topSkill);
         topadd = (TextView) findViewById(R.id.topAdd);
+        rate = (TextView) findViewById(R.id.ratenow);
 
         profile_image = (ImageView) findViewById(R.id.profile_image);
 
@@ -77,6 +84,29 @@ public class DetatilActivity extends AppCompatActivity {
             @Override
             public void onSuccess(Uri uri) {
                 Glide.with(getApplicationContext()).load(uri).into(profile_image);
+            }
+        });
+
+
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(DetatilActivity.this);
+                dialog.setContentView(R.layout.rate_dialog_layout);
+
+
+                RatingBar ratestar = (RatingBar) dialog.findViewById(R.id.ratestar);
+                Button saverate = (Button) dialog.findViewById(R.id.ratesubmit);
+                Button cancelrate = (Button) dialog.findViewById(R.id.ratecancel);
+
+                cancelrate.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
             }
         });
 
