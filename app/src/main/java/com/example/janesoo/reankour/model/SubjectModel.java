@@ -8,9 +8,11 @@ import java.io.Serializable;
 
 public class SubjectModel implements Serializable{
     private String name;
-    private int image;
+    private String image;
     private String category;
 
+    public SubjectModel() {
+    }
 
     public String getCategory() {
         return category;
@@ -28,15 +30,15 @@ public class SubjectModel implements Serializable{
         this.name = name;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    public SubjectModel(String name, int image, String category) {
+    public SubjectModel(String name, String image, String category) {
         this.name = name;
         this.image = image;
         this.category = category;
