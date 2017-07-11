@@ -51,6 +51,14 @@ public class FragmentSubject extends Fragment{
         newSubject.add(new SubjectModel("english",R.drawable.english,"english"));
         newSubject.add(new SubjectModel("math",R.drawable.math,"math"));
         newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry,"chemistry"));
+        newSubject.add(new SubjectModel("physic",R.drawable.physic,"physic"));
+        newSubject.add(new SubjectModel("english",R.drawable.english,"english"));
+        newSubject.add(new SubjectModel("math",R.drawable.math,"math"));
+        newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry,"chemistry"));
+        newSubject.add(new SubjectModel("physic",R.drawable.physic,"physic"));
+        newSubject.add(new SubjectModel("english",R.drawable.english,"english"));
+        newSubject.add(new SubjectModel("math",R.drawable.math,"math"));
+        newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry,"chemistry"));
 
 
         adapter=new SubjectAdapter(newSubject,getContext());
