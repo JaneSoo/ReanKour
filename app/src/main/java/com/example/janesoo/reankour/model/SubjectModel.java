@@ -1,12 +1,14 @@
 package com.example.janesoo.reankour.model;
 
+import java.io.Serializable;
+
 /**
  * Created by user1 on 6/21/2017.
  */
 
-public class SubjectModel {
-    String name;
-    int image;
+public class SubjectModel implements Serializable{
+    private String name;
+    private int image;
 
     public String getName() {
         return name;

@@ -13,6 +13,11 @@ import com.example.janesoo.reankour.SubjectActivity;
 import com.example.janesoo.reankour.adapter.SubjectAdapter;
 import com.example.janesoo.reankour.adapter.TutorAdapter;
 import com.example.janesoo.reankour.model.SubjectModel;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -38,7 +43,10 @@ public class FragmentSubject extends Fragment{
         View myView = inflater.inflate(R.layout.subject_item_layout,container,false);
         myGrid=(GridView)myView.findViewById(R.id.grid_home);
 
-        ArrayList<SubjectModel> newSubject=new ArrayList<>();
+
+        final ArrayList<SubjectModel> newSubject=new ArrayList<>();
+
+
 
         newSubject.add(new SubjectModel("physic",R.drawable.physic));
         newSubject.add(new SubjectModel("english",R.drawable.english));
@@ -50,6 +58,7 @@ public class FragmentSubject extends Fragment{
         newSubject.add(new SubjectModel("math",R.drawable.math));
         newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry));
         newSubject.add(new SubjectModel("biology",R.drawable.biology));
+
 
 
         adapter=new SubjectAdapter(newSubject,getContext());

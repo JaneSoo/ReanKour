@@ -1,5 +1,6 @@
 package com.example.janesoo.reankour;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.janesoo.reankour.adapter.VideoAdapter;
+import com.example.janesoo.reankour.model.SubjectModel;
 import com.example.janesoo.reankour.model.Video;
 
 import java.util.ArrayList;
@@ -24,6 +26,9 @@ public class VideoActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.video_layout);
+
+      /*  Intent intent = getIntent();
+        SubjectModel subjectModel = (SubjectModel) intent.getSerializableExtra("Subject");*/
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview_home);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
