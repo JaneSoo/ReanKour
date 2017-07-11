@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.janesoo.reankour.DetailDocumentActivity;
 import com.example.janesoo.reankour.R;
 import com.example.janesoo.reankour.model.Document;
@@ -62,19 +63,20 @@ public class DocumentAdapter extends BaseAdapter {
         View myView =inflater.inflate(R.layout.content_list_document,null);
 
         ImageView imageViewDocument=(ImageView)myView.findViewById(R.id.news_img);
-        imageViewDocument.setImageResource(arrayList.get(position).getDoc_img());
+        Glide.with(context).load(arrayList.get(position).getImage()).into(imageViewDocument);
 
         TextView textViewTitle=(TextView)myView.findViewById(R.id.news_title);
-        textViewTitle.setText(arrayList.get(position).getDoc_title());
+        textViewTitle.setText(arrayList.get(position).getTitle());
 
         TextView textViewContent=(TextView)myView.findViewById(R.id.document);
-        textViewContent.setText(arrayList.get(position).getDoc_content());
+        textViewContent.setText(arrayList.get(position).getContent());
 
         TextView textViewDate= (TextView) myView.findViewById(R.id.news_date);
         textViewDate.setText(arrayList.get(position).getDate());
 
         Button buttonReadMore=(Button)myView.findViewById(R.id.btn_readMore);
-
+        /*buttonReadMore.setText(arrayList.get(position).getFullContent());
+*/
 
 
         buttonReadMore.setOnClickListener(new View.OnClickListener() {

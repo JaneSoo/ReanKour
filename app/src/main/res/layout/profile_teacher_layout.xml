@@ -28,7 +28,7 @@
                 <TextView
                     android:id="@+id/proTopName"
                     android:layout_margin="5dp"
-                    android:textColor="#494949"
+                    android:textColor="#286ce2"
                     android:textAlignment="center"
                     android:text="Kor koemsreang"
                     android:layout_width="match_parent"
@@ -116,7 +116,8 @@
              <Button
                  android:layout_margin="10dp"
                  android:id="@+id/proEdit"
-                 android:background="#86ddea"
+                 android:textColor="#ffff"
+                 android:background="@color/colorPrimary"
                  android:text="Edit Profile"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content" />

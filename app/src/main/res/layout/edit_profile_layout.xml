@@ -219,7 +219,7 @@
             android:layout_height="wrap_content">
             <Button
                 android:id="@+id/btnCancel"
-                android:background="#cecacb"
+                android:background="#fc4242"
                 android:layout_margin="10dp"
                 android:layout_weight="2"
                 android:textColor="#fff"
@@ -228,7 +228,7 @@
                 android:layout_height="match_parent" />
             <Button
                 android:id="@+id/btnSave"
-                android:background="#5fcce4"
+                android:background="@color/colorPrimary"
                 android:layout_margin="10dp"
                 android:textColor="#fff"
                 android:layout_weight="2"
