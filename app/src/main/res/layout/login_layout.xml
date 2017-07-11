@@ -51,13 +51,14 @@
                 android:background="#5ebee4"
                 android:textColor="#fff"
                 android:text="Login"/>
-            <Button
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#5ebee4"
-                android:textColor="#fff"
-                android:text="Signup with Facebook"/>
+
+            <!--<Button-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="#5ebee4"-->
+                <!--android:textColor="#fff"-->
+                <!--android:text="Login with Facebook"/>-->
 
             <TextView
                 android:textSize="20dp"

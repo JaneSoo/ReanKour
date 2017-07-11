@@ -114,27 +114,10 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
-                    databaseReference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            User user = dataSnapshot.getValue(User.class);
-                            if(user.getIsPublish().equals("false")){
-                                Toast.makeText(getApplicationContext(), "You have disabled your account!", Toast.LENGTH_LONG).show();
-                                progressDialog.dismiss();
-                            }
-                            else {
-                                progressDialog.dismiss();
-                                Intent intent = new Intent(getBaseContext(), AllBottomNavigationViewActivity.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(intent);
-                            }
-                        }
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    });
+                    progressDialog.dismiss();
+                    Intent intent = new Intent(getBaseContext(), AllBottomNavigationViewActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
                 }
                 else{
                     progressDialog.dismiss();
