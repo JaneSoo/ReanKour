@@ -42,9 +42,29 @@ public class FragmentSubject extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View myView = inflater.inflate(R.layout.subject_item_layout,container,false);
         myGrid=(GridView)myView.findViewById(R.id.grid_home);
+
+        DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference("Subjects");
         final ArrayList<SubjectModel> newSubject=new ArrayList<>();
 
-        newSubject.add(new SubjectModel("physic",R.drawable.physic,"physic"));
+        mRootRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                newSubject.clear();
+                for(DataSnapshot subjectSnapshot : dataSnapshot.getChildren()){
+                    SubjectModel subjectModel = subjectSnapshot.getValue(SubjectModel.class);
+                    newSubject.add(subjectModel);
+                }
+                adapter = new SubjectAdapter(newSubject,getContext());
+                myGrid.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+      /*  newSubject.add(new SubjectModel("physic",R.drawable.physic,"physic"));
         newSubject.add(new SubjectModel("english",R.drawable.english,"english"));
         newSubject.add(new SubjectModel("math",R.drawable.math,"math"));
         newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry,"chemistry"));
@@ -57,9 +77,12 @@ public class FragmentSubject extends Fragment{
         newSubject.add(new SubjectModel("math",R.drawable.math,"math"));
         newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry,"chemistry"));
 
-        adapter=new SubjectAdapter(newSubject,getContext());
+*/
+
+
+       /* adapter=new SubjectAdapter(newSubject,getContext());
         myGrid.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged();*/
         return myView;
 
     }

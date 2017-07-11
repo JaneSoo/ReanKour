@@ -64,7 +64,8 @@ public class SubjectAdapter extends BaseAdapter {
 
 
 
-        imageViewSubj.setImageResource(arrayList.get(position).getImage());
+       /* imageViewSubj.setImageResource(arrayList.get(position).getImage());*/
+        Glide.with(context).load(arrayList.get(position).getImage()).into(imageViewSubj);
         textTitle.setText(arrayList.get(position).getName());
 
 
