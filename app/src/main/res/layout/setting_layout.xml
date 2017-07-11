@@ -28,6 +28,7 @@
 
         <LinearLayout
             android:layout_margin="10dp"
+            android:visibility="invisible"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:id="@+id/account"
@@ -41,9 +42,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Disable account"/>
-
-
+                android:text="Unpublished account"/>
         </LinearLayout>
 
         <LinearLayout

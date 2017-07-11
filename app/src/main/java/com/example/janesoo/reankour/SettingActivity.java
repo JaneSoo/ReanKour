@@ -63,6 +63,22 @@ SettingActivity extends AppCompatActivity {
         storageReference = FirebaseStorage.getInstance().getReference().child("Profile");
         mAuth = FirebaseAuth.getInstance();
 
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                if(user.getAccountType().equals("Tutor")){
+                    account.setVisibility(1);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,26 +116,21 @@ SettingActivity extends AppCompatActivity {
                 saveaccount.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        switchaccount.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                            @Override
-                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                                if(isChecked){
-                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
-                                    if(publish.equals("true")){
-                                        databaseReference.child("isPublish").setValue("false");
-                                        Toast.makeText(getApplicationContext(), "Your account have been disabled!", Toast.LENGTH_LONG).show();
-                                        dialog.dismiss();
-                                        Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
-                                        startActivity(intent);
-                                    }
-                                    if(publish.equals("false")){
-                                        databaseReference.child("isPublish").setValue("true");
-                                        Toast.makeText(getApplicationContext(), "Your account have been enabled!", Toast.LENGTH_LONG).show();
-                                        dialog.dismiss();
-                                    }
-                                }
-                            }
-                        });
+                        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
+                    if(switchaccount.isChecked()){
+                        if(publish.equals("true")){
+                            databaseReference.child("isPublish").setValue("false");
+                            Toast.makeText(getApplicationContext(), "Your account have been disabled!", Toast.LENGTH_LONG).show();
+                            dialog.dismiss();
+                            Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                        }
+                    }
+                    if(publish.equals("false")){
+                        databaseReference.child("isPublish").setValue("true");
+                        Toast.makeText(getApplicationContext(), "Your account have been enabled!", Toast.LENGTH_LONG).show();
+                        dialog.dismiss();
+                    }
                     }
                 });
 
@@ -133,30 +144,6 @@ SettingActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
-
-//        DatabaseReference mRef = databaseReference.child(mAuth.getCurrentUser().getUid());
-//        mRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                User user = dataSnapshot.getValue(User.class);
-//                if (user.getAccountType().equals("Tutor"))
-//                {
-//                    Intent intent = new Intent(getBaseContext(),TutorProfileActivity.class);
-//                    intent.putExtra("user", user);
-//                    startActivity(intent);
-//                }
-//                else{
-//                    Intent intent = new Intent(getBaseContext(),StudentProfileActivity.class);
-//                    intent.putExtra("user",user);
-//                    startActivity(intent);
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//            }
-//        });
 
     }
 

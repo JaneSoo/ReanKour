@@ -37,14 +37,11 @@ public class SubjectAdapter extends BaseAdapter {
         this.context=context;
 
     }
-
-
     @Override
     public int getCount() {
 
         return arrayList.size();
     }
-
     @Override
     public Object getItem(int position) {
         return arrayList.get(position);
