@@ -10,7 +10,7 @@
         <android.support.v7.widget.CardView
 
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="180dp"
             android:layout_margin="10dp">
         <LinearLayout
             android:layout_margin="10dp"
@@ -23,14 +23,12 @@
                 android:id="@+id/image_subject"
                 android:layout_gravity="center"
                 android:src="@drawable/calculator"
-                android:layout_width="115dp"
-                android:layout_height="110dp"
+                android:layout_width="130dp"
+                android:layout_height="95dp"
                 />
             <TextView
-                android:layout_marginBottom="20dp"
                 android:layout_gravity="center"
                 android:id="@+id/name_subject"
-                android:textSize="20dp"
                 android:text="Math"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
