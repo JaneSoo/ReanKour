@@ -13,6 +13,11 @@ import com.example.janesoo.reankour.DocumentActivity;
 import com.example.janesoo.reankour.R;
 import com.example.janesoo.reankour.adapter.DocumentAdapter;
 import com.example.janesoo.reankour.model.Document;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -29,26 +34,43 @@ public class FragmentContent extends Fragment {
         this.documentActivity= documentActivity;
     }
 
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View myView = inflater.inflate(R.layout.content_document,container,false);
         listView= (ListView)myView.findViewById(R.id.list_document);
         Button buttonReadMore=(Button)myView.findViewById(R.id.btn_readMore);
-        ArrayList<Document> newDocument =new ArrayList<>();
 
-        newDocument.add(new Document(R.drawable.pic,"The way to find university","There are so many to choose the university in cambodia","12 June 17"));
-        newDocument.add(new Document(R.drawable.pic,"How to speak English","There are so many way that can help you to speak English very well","19 June 17"));
-        newDocument.add(new Document(R.drawable.pic,"Scholarship","Scholarship to openning now such as Singapore, Korea, Indonesi","10 June 17"));
-        newDocument.add(new Document(R.drawable.pic,"How to develop yourself","There are so many that can develop yourself to be stronger ","12 June 17"));
-        newDocument.add(new Document(R.drawable.pic,"The way to find university","There are so many to choose the university in cambodia","12 June 17"));
-        newDocument.add(new Document(R.drawable.pic,"How to speak English","There are so many way that can help you to speak English very well","19 June 17"));
-        newDocument.add(new Document(R.drawable.pic,"Scholarship","Scholarship to openning now such as Singapore, Korea, Indonesi","10 June 17"));
-        newDocument.add(new Document(R.drawable.pic,"How to develop yourself","There are so many that can develop yourself to be stronger ","12 June 17"));
-        documentAdapter=new DocumentAdapter(newDocument,getContext());
-        listView.setAdapter(documentAdapter);
-        documentAdapter.notifyDataSetChanged();
+
+
+
+        DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference("Contents");
+        final  ArrayList<Document> newDocument =new ArrayList<>();
+
+        mRootRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                newDocument.clear();
+                for(DataSnapshot contentSnapshot : dataSnapshot.getChildren()){
+                     Document document = contentSnapshot.getValue(Document.class);
+                     newDocument.add(document);
+                }
+                documentAdapter = new DocumentAdapter(newDocument,getContext());
+                listView.setAdapter(documentAdapter);
+                documentAdapter.notifyDataSetChanged();
+
+            }
+
+
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         return myView;
-
     }
 }

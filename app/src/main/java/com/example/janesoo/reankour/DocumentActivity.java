@@ -8,10 +8,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.janesoo.reankour.adapter.DocumentAdapter;
 import com.example.janesoo.reankour.model.Document;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +30,9 @@ import java.util.List;
 public class DocumentActivity extends AppCompatActivity {
 
     Button buttonReadMore;
+
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,4 +52,6 @@ public class DocumentActivity extends AppCompatActivity {
 
 
     }
+
+
 }

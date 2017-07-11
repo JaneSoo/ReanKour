@@ -1,6 +1,7 @@
 package com.example.janesoo.reankour.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.janesoo.reankour.R;
 import com.example.janesoo.reankour.SubjectActivity;
+import com.example.janesoo.reankour.VideoActivity;
 import com.example.janesoo.reankour.model.SubjectModel;
 import com.example.janesoo.reankour.model.User;
 
@@ -29,8 +32,8 @@ public class SubjectAdapter extends BaseAdapter {
 
 
 
-    public SubjectAdapter(ArrayList<SubjectModel> newSubject, Context context) {
-        this.arrayList=newSubject;
+    public SubjectAdapter(ArrayList<SubjectModel> arrayList, Context context) {
+        this.arrayList=arrayList;
         this.context=context;
 
     }
@@ -53,20 +56,31 @@ public class SubjectAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent)
+    public View getView(final int position, View convertView, ViewGroup parent)
     {
         LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View myView=inflater.inflate(R.layout.subject_layout,null);
 
 
-        ImageView imageView=(ImageView)myView.findViewById(R.id.image_subject);
+        ImageView imageViewSubj=(ImageView)myView.findViewById(R.id.image_subject);
         TextView textTitle=(TextView)myView.findViewById(R.id.name_subject);
 
-        SubjectModel model = arrayList.get(position);
 
-        imageView.setImageResource(model.getImage());
-        textTitle.setText(model.getName());
+
+        imageViewSubj.setImageResource(arrayList.get(position).getImage());
+        textTitle.setText(arrayList.get(position).getName());
+
+       /* imageViewSubj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,VideoActivity.class);
+                intent.putExtra("Subject",arrayList.get(position));
+                context.startActivity(intent);
+            }
+        });*/
+
 
         return myView;
     }
+
 }
