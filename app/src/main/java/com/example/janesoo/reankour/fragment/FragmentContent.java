@@ -45,6 +45,7 @@ public class FragmentContent extends Fragment {
 
 
 
+
         DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference("Contents");
         final  ArrayList<Document> newDocument =new ArrayList<>();
 
@@ -61,6 +62,7 @@ public class FragmentContent extends Fragment {
                 documentAdapter.notifyDataSetChanged();
 
             }
+
 
 
             @Override
