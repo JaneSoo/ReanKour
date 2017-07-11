@@ -44,16 +44,16 @@ public class FragmentSubject extends Fragment{
         myGrid=(GridView)myView.findViewById(R.id.grid_home);
         final ArrayList<SubjectModel> newSubject=new ArrayList<>();
 
-       newSubject.add(new SubjectModel("physic",R.drawable.physic));
-       newSubject.add(new SubjectModel("english",R.drawable.english));
-       newSubject.add(new SubjectModel("math",R.drawable.math));
-       newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry));
-       newSubject.add(new SubjectModel("biology",R.drawable.biology));
-       newSubject.add(new SubjectModel("physic",R.drawable.physic));
-       newSubject.add(new SubjectModel("english",R.drawable.english));
-       newSubject.add(new SubjectModel("math",R.drawable.math));
-       newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry));
-       newSubject.add(new SubjectModel("biology",R.drawable.biology));
+       newSubject.add(new SubjectModel("Physic",R.drawable.physic));
+       newSubject.add(new SubjectModel("English",R.drawable.english));
+       newSubject.add(new SubjectModel("Math",R.drawable.math));
+       newSubject.add(new SubjectModel("Chemistry",R.drawable.chemistry));
+       newSubject.add(new SubjectModel("Biology",R.drawable.biology));
+       newSubject.add(new SubjectModel("Physic",R.drawable.physic));
+       newSubject.add(new SubjectModel("English",R.drawable.english));
+       newSubject.add(new SubjectModel("Math",R.drawable.math));
+       newSubject.add(new SubjectModel("Chemistry",R.drawable.chemistry));
+       newSubject.add(new SubjectModel("Biology",R.drawable.biology));
         adapter=new SubjectAdapter(newSubject,getContext());
         myGrid.setAdapter(adapter);
         adapter.notifyDataSetChanged();
