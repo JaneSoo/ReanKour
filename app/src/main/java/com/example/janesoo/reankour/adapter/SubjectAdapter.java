@@ -70,14 +70,15 @@ public class SubjectAdapter extends BaseAdapter {
         imageViewSubj.setImageResource(arrayList.get(position).getImage());
         textTitle.setText(arrayList.get(position).getName());
 
-       /* imageViewSubj.setOnClickListener(new View.OnClickListener() {
+
+       imageViewSubj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,VideoActivity.class);
                 intent.putExtra("Subject",arrayList.get(position));
                 context.startActivity(intent);
             }
-        });*/
+        });
 
 
         return myView;

@@ -37,6 +37,7 @@
         <activity android:name=".DocumentActivity"></activity>
         <activity android:name=".DetailDocumentActivity"></activity>
         <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".VideoActivity"></activity>
         <activity android:name=".AllBottomNavigationViewActivity"
             android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>

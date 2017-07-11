@@ -9,6 +9,16 @@ import java.io.Serializable;
 public class SubjectModel implements Serializable{
     private String name;
     private int image;
+    private String category;
+
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public String getName() {
         return name;
@@ -26,10 +36,9 @@ public class SubjectModel implements Serializable{
         this.image = image;
     }
 
-    public SubjectModel(String name, int image) {
+    public SubjectModel(String name, int image, String category) {
         this.name = name;
         this.image = image;
-
+        this.category = category;
     }
-
 }
