@@ -121,7 +121,9 @@ public class TutorAdapter extends BaseAdapter {
                             test = false;
                         }
                         if(test==true){
-                            DatabaseReference databaseReference = mDatabase.child(listofTutor.get(position).getPhone()).child(phone.getText().toString());
+                            DatabaseReference databaseReference = mDatabase.child(listofTutor.get(position).getFullname());
+                            databaseReference.child("ref").setValue(listofTutor.get(position).getFullname());
+                            databaseReference.child("phone").setValue(phone.getText().toString());
                             databaseReference.child("email").setValue(email.getText().toString());
                             databaseReference.child("name").setValue(name.getText().toString());
                             Toast.makeText(dialog.getContext(),"Thanks, You will be contacted later!", Toast.LENGTH_LONG).show();

@@ -16,17 +16,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.janesoo.reankour.adapter.VideoAdapter;
+import com.example.janesoo.reankour.model.Subscription;
 import com.example.janesoo.reankour.model.User;
+import com.example.janesoo.reankour.model.Video;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 import static com.example.janesoo.reankour.R.id.profile_image;
 
@@ -40,6 +50,12 @@ public class TutorProfileActivity extends AppCompatActivity {
     private StorageReference storageReference;
     TextView nametop, name, address, skill, experience,edu, position, email, phone, gender;
     Button edit;
+    DatabaseReference databaseReference;
+
+    ArrayList<Subscription> arrayList = new ArrayList<>();
+
+    TextView sub;
+
     private void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -71,10 +87,35 @@ public class TutorProfileActivity extends AppCompatActivity {
         gender = (TextView) findViewById(R.id.proSex);
         experience = (TextView) findViewById(R.id.proExperience);
 
+        sub = (TextView) findViewById(R.id.subscription);
+
         profile_image = (ImageView) findViewById(R.id.profile_image);
 
         edit = (Button) findViewById(R.id.proEdit);
 
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Subscription");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                arrayList.clear();
+                for(DataSnapshot subSnapshot : dataSnapshot.getChildren()){
+                    Subscription subscription = subSnapshot.getValue(Subscription.class);
+                    if(subscription.getRef().equals(user.getFullname()))
+                    {
+                        arrayList.add(subscription);
+                    }
+
+                }
+
+                sub.setText(arrayList.size()+"");
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         storageReference = FirebaseStorage.getInstance().getReference().child("Profile").child(user.getEmail());
         storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
