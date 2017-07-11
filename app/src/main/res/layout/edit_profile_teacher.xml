@@ -276,7 +276,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:background="#e1d9da"
+                android:background="#fc4242"
                 android:layout_margin="10dp"
                 android:layout_weight="2"
                 android:textColor="#fff"
@@ -285,7 +285,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
             <Button
-                android:background="#7bc2e9"
+                android:background="@color/colorPrimary"
                 android:id="@+id/btnSave"
                 android:textColor="#fff"
                 android:layout_margin="10dp"

@@ -129,7 +129,8 @@
                 <Button
                     android:layout_margin="10dp"
                     android:id="@+id/proEdit"
-                    android:background="#86ddea"
+                    android:textColor="#ffff"
+                    android:background="@color/colorPrimary"
                     android:text="Edit Profile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

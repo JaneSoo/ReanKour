@@ -3,6 +3,7 @@ package com.example.janesoo.reankour;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -59,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
+
 
     //showing on GUI
     class CountNumberHandler extends Handler{
