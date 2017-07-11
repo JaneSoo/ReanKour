@@ -42,25 +42,18 @@ public class FragmentSubject extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View myView = inflater.inflate(R.layout.subject_item_layout,container,false);
         myGrid=(GridView)myView.findViewById(R.id.grid_home);
-
-
         final ArrayList<SubjectModel> newSubject=new ArrayList<>();
 
-
-
-//        newSubject.add(new SubjectModel("physic",R.drawable.physic));
-//        newSubject.add(new SubjectModel("english",R.drawable.english));
-//        newSubject.add(new SubjectModel("math",R.drawable.math));
-//        newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry));
-//        newSubject.add(new SubjectModel("biology",R.drawable.biology));
-//        newSubject.add(new SubjectModel("physic",R.drawable.physic));
-//        newSubject.add(new SubjectModel("english",R.drawable.english));
-//        newSubject.add(new SubjectModel("math",R.drawable.math));
-//        newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry));
-//        newSubject.add(new SubjectModel("biology",R.drawable.biology));
-
-
-
+       newSubject.add(new SubjectModel("physic",R.drawable.physic));
+       newSubject.add(new SubjectModel("english",R.drawable.english));
+       newSubject.add(new SubjectModel("math",R.drawable.math));
+       newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry));
+       newSubject.add(new SubjectModel("biology",R.drawable.biology));
+       newSubject.add(new SubjectModel("physic",R.drawable.physic));
+       newSubject.add(new SubjectModel("english",R.drawable.english));
+       newSubject.add(new SubjectModel("math",R.drawable.math));
+       newSubject.add(new SubjectModel("chemistry",R.drawable.chemistry));
+       newSubject.add(new SubjectModel("biology",R.drawable.biology));
         adapter=new SubjectAdapter(newSubject,getContext());
         myGrid.setAdapter(adapter);
         adapter.notifyDataSetChanged();

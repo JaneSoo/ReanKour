@@ -90,7 +90,7 @@ public class AllBottomNavigationViewActivity extends AppCompatActivity {
             });
         }
         if(item.getItemId() == R.id.setting){
-            Intent intent = new Intent(AllBottomNavigationViewActivity.this,StudentProfileActivity.class);
+            Intent intent = new Intent(AllBottomNavigationViewActivity.this,SettingActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
 
