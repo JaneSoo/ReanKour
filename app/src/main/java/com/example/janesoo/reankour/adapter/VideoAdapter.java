@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.janesoo.reankour.R;
 import com.example.janesoo.reankour.model.Video;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -56,6 +57,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
             textDate=(TextView)itemView.findViewById(R.id.date);
             webView.getSettings().setJavaScriptEnabled(true);
             webView.setWebChromeClient(new WebChromeClient(){
+
 
             });
 

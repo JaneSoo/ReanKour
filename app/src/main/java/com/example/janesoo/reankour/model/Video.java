@@ -8,15 +8,28 @@ public class Video {
     private String videoUrl;
     private String title;
     private String date;
+    private String category;
 
-    public Video(String videoUrl, String title, String date) {
+    public Video() {
+    }
+
+    public Video(String videoUrl, String title, String date, String category) {
         this.videoUrl = videoUrl;
         this.title = title;
         this.date = date;
+        this.category = category;
     }
 
     public String getVideoUrl() {
         return videoUrl;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public void setVideoUrl(String videoUrl) {
