@@ -33,10 +33,7 @@ public class FragmentContent extends Fragment {
     public void setDocumentActivity(DocumentActivity documentActivity){
         this.documentActivity= documentActivity;
     }
-
-
-
-    @Nullable
+ @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View myView = inflater.inflate(R.layout.content_document,container,false);
@@ -60,12 +57,8 @@ public class FragmentContent extends Fragment {
                 documentAdapter = new DocumentAdapter(newDocument,getContext());
                 listView.setAdapter(documentAdapter);
                 documentAdapter.notifyDataSetChanged();
-
             }
-
-
-
-            @Override
+         @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
