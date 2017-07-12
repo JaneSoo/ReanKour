@@ -36,6 +36,7 @@ public class EditTutorActivity extends AppCompatActivity {
     Button save, cancel;
     FirebaseAuth mAuth;
     private StorageReference storageReference;
+    DatabaseReference databaseReference;
     ProgressDialog progress;
     public static final int Galary= 2;
 
@@ -77,6 +78,9 @@ public class EditTutorActivity extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
+
+
+
         storageReference = FirebaseStorage.getInstance().getReference().child("Profile").child(mAuth.getCurrentUser().getEmail());
         storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override

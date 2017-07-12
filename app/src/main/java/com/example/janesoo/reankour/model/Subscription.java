@@ -11,11 +11,17 @@ public class Subscription implements Serializable {
     private String email;
     private String name;
     private String phone;
+    private String ref;
 
-    public Subscription(String email, String name, String phone) {
+    public Subscription(){
+
+    }
+
+    public Subscription(String email, String name, String phone, String ref) {
         this.email = email;
         this.name = name;
         this.phone = phone;
+        this.ref = ref;
     }
 
     public String getEmail() {
@@ -40,5 +46,23 @@ public class Subscription implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getRef() {
+        return ref;
+    }
+
+    public void setRef(String ref) {
+        this.ref = ref;
+    }
+
+    @Override
+    public String toString() {
+        return "Subscription{" +
+                "email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", ref='" + ref + '\'' +
+                '}';
     }
 }

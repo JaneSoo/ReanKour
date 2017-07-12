@@ -28,7 +28,7 @@
                 <TextView
                     android:id="@+id/proTopName"
                     android:layout_margin="5dp"
-                    android:textColor="#286ce2"
+                    android:textColor="#2dbfcf"
                     android:textAlignment="center"
                     android:text="Kor koemsreang"
                     android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_margin="10dp"
+                    android:layout_margin="0dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -75,6 +75,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <TextView
+                            android:id="@+id/subscription"
                             android:textAlignment="center"
                             android:textStyle="bold"
                             android:layout_weight="1"
@@ -87,7 +88,7 @@
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="New"/>
+                            android:text="Subscriber"/>
                     </LinearLayout>
 
                     <LinearLayout
